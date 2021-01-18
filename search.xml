@@ -148,9 +148,9 @@
 </li>
 </ol>
 <h3 id="二、填空"><a href="#二、填空" class="headerlink" title="二、填空"></a>二、填空</h3><ol>
-<li>$A=\begin{pmatrix} 0.2 &amp; 0.3 \ 0 &amp; 0.5 \end{pmatrix},\ \sum\limits_{k=1}^\infty{A^k}=______$;</li>
-<li>设 $x=\left[\begin{array}{cccc} 3 &amp; -4 &amp; 0 &amp; 12 \end{array}\right]^{T}$, $Householder$ 变换 $H=I-2ww^T(其中\left | w \right |<em>2=1)$, 满足 $Hx=13e_1$, 则 $w=___\</em>$;</li>
-<li>设 $A=\begin{pmatrix} 1 &amp; 3 &amp; 2\ 3 &amp; 10 &amp; 7 \ 2 &amp; 7 &amp; 6 \end{pmatrix}$, 则矩阵 $A$ 的 $Cholesky$ 因子为 $____$;</li>
+<li>$A=\begin{pmatrix} 0.2 &amp; 0.3 \ 0 &amp; 0.5 \end{pmatrix},\ \sum\limits_{k=1}^\infty{A^k}=?$;</li>
+<li>设 $x=\left[\begin{array}{cccc} 3 &amp; -4 &amp; 0 &amp; 12 \end{array}\right]^{T}$, $Householder$ 变换 $H=I-2ww^T(其中\left | w \right |_2=1)$, 满足 $Hx=13e_1$, 则 $w=?$;</li>
+<li>设 $A=\begin{pmatrix} 1 &amp; 3 &amp; 2\ 3 &amp; 10 &amp; 7 \ 2 &amp; 7 &amp; 6 \end{pmatrix}$, 则矩阵 $A$ 的 $Cholesky$ 因子为 $?$;</li>
 <li></li>
 </ol>
 <hr>
