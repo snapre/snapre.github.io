@@ -29,18 +29,6 @@
       </tags>
   </entry>
   <entry>
-    <title>java</title>
-    <url>/2021/01/22/java/</url>
-    <content><![CDATA[<h2 id="Java-Start"><a href="#Java-Start" class="headerlink" title="Java Start"></a>Java Start</h2><ul>
-<li>How to get jdk?</li>
-<li>How to use it?</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Python learning</title>
     <url>/2020/12/17/first-blog/</url>
     <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>() -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __main__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
@@ -59,24 +47,6 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>optimization</title>
-    <url>/2020/12/26/optimization/</url>
-    <content><![CDATA[<h1 id="methods-of-optimization"><a href="#methods-of-optimization" class="headerlink" title="methods of optimization"></a>methods of optimization</h1><p><strong>作业 5.</strong> 设函数 $ f:\mathbb{R}^n \to \mathbb{R}$ 连续二次可微，$ {x^k}$ 由某下降算法生成（即 $d^k$ 为下降方向），$\alpha_k$ 由Wolfe-Powell原则生成。已知   $x^k \to x^*$，并且 $\nabla f(x^*)=0,\nabla^2f(x^*)\mathbb{&gt;}0$。令<br>$$<br>\delta_k := \frac{\Vert\nabla f(x^k)+\nabla^2f(x^k)d^k\Vert}{\Vert d^k \Vert}<br>$$<br>如果 $\delta_k \to 0$，证明下述结论成立：<br>$\space$（1）当 $k$ 充分大时，必有步长 $\alpha_k=1;$<br>$\space$（2）序列 ${x^k}$ 超线性收敛。</p>
-<blockquote>
-<p>解答：（1）</p>
-</blockquote>
-<h1 id="C-周期发生器"><a href="#C-周期发生器" class="headerlink" title="C++ 周期发生器"></a>C++ 周期发生器</h1><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> val, gen();</span><br><span class="line">    <span class="keyword">int</span> k = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Signal Is:\n&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (;;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (k &gt; <span class="number">2</span>)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        val = gen();</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d%*c\n&quot;</span>, val, val + <span class="number">1</span>, <span class="string">&#x27;*&#x27;</span>);</span><br><span class="line">        <span class="keyword">if</span> (val == <span class="number">0</span>)</span><br><span class="line">            k++;</span><br><span class="line">    &#125;</span><br><span class="line">    getchar();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gen</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> top = <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> dirction = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (i==top+<span class="number">1</span>) &#123;dirction = <span class="number">-1</span>; i -= <span class="number">2</span>;&#125;</span><br><span class="line">    <span class="keyword">if</span> (i==<span class="number">-1</span>) &#123;dirction = <span class="number">1</span>; i += <span class="number">2</span>;&#125;</span><br><span class="line">    <span class="keyword">if</span> (i&lt;=top &amp;&amp; dirction==<span class="number">1</span>) <span class="keyword">return</span> i++;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> i--;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>计算数学</category>
-        <category>运筹学</category>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>优化算法</tag>
-        <tag>Hello</tag>
-      </tags>
   </entry>
   <entry>
     <title>股市如人生,炒股即做人</title>
@@ -125,6 +95,36 @@
       <tags>
         <tag>stock</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>optimization</title>
+    <url>/2020/12/26/optimization/</url>
+    <content><![CDATA[<h1 id="methods-of-optimization"><a href="#methods-of-optimization" class="headerlink" title="methods of optimization"></a>methods of optimization</h1><p><strong>作业 5.</strong> 设函数 $ f:\mathbb{R}^n \to \mathbb{R}$ 连续二次可微，$ {x^k}$ 由某下降算法生成（即 $d^k$ 为下降方向），$\alpha_k$ 由Wolfe-Powell原则生成。已知   $x^k \to x^*$，并且 $\nabla f(x^*)=0,\nabla^2f(x^*)\mathbb{&gt;}0$。令<br>$$<br>\delta_k := \frac{\Vert\nabla f(x^k)+\nabla^2f(x^k)d^k\Vert}{\Vert d^k \Vert}<br>$$<br>如果 $\delta_k \to 0$，证明下述结论成立：<br>$\space$（1）当 $k$ 充分大时，必有步长 $\alpha_k=1;$<br>$\space$（2）序列 ${x^k}$ 超线性收敛。</p>
+<blockquote>
+<p>解答：（1）</p>
+</blockquote>
+<h1 id="C-周期发生器"><a href="#C-周期发生器" class="headerlink" title="C++ 周期发生器"></a>C++ 周期发生器</h1><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> val, gen();</span><br><span class="line">    <span class="keyword">int</span> k = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Signal Is:\n&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (;;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (k &gt; <span class="number">2</span>)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        val = gen();</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d%*c\n&quot;</span>, val, val + <span class="number">1</span>, <span class="string">&#x27;*&#x27;</span>);</span><br><span class="line">        <span class="keyword">if</span> (val == <span class="number">0</span>)</span><br><span class="line">            k++;</span><br><span class="line">    &#125;</span><br><span class="line">    getchar();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gen</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> top = <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> dirction = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (i==top+<span class="number">1</span>) &#123;dirction = <span class="number">-1</span>; i -= <span class="number">2</span>;&#125;</span><br><span class="line">    <span class="keyword">if</span> (i==<span class="number">-1</span>) &#123;dirction = <span class="number">1</span>; i += <span class="number">2</span>;&#125;</span><br><span class="line">    <span class="keyword">if</span> (i&lt;=top &amp;&amp; dirction==<span class="number">1</span>) <span class="keyword">return</span> i++;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> i--;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>计算数学</category>
+        <category>运筹学</category>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>优化算法</tag>
+        <tag>Hello</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java</title>
+    <url>/2021/01/22/java/</url>
+    <content><![CDATA[<h2 id="Java-Start"><a href="#Java-Start" class="headerlink" title="Java Start"></a>Java Start</h2><ul>
+<li>How to get jdk?</li>
+<li>How to use it?</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
   </entry>
   <entry>
     <title>有限元分析在航空发动机制造中的应用</title>
