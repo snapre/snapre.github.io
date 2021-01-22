@@ -50,14 +50,70 @@
 
 
 
+    
+        <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        
+            load: ['[tex]/mhchem'],
+        
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        
+            packages: {'[+]': ['mhchem']},
+        
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
           
 
 
     
     
     <title>
-          
-            duters-wu
+        
+            java | duters-wu
         
     </title>
     
@@ -225,106 +281,111 @@
 </aside>
   
   <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/2021/01/22/java/">java</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2021-01-22
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2021-01-22
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/Java/">Java</a>
+    </span>
+    
+      <span>
+        <span class="iconfont icon-eye"></span>
+        阅读次数:&nbsp;
+        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+      </span>
+    
+  </div>
+</div>   
     
 
-<div class="mdui-card mdui-p-a-4 mdui-m-b-5">
-    <div class="page-describe">
-        目前共计 8 篇日志。
-    </div>
-    <div class="posts-collapse">
-        
-            
-            
-                <div class="collection-title">
-                    <a href="/archives/2021"><h2>2021<small>归档</small></h2></a>
-                </div>
-                
-            
 
-            <div class="collection-item">
-                <h3><a href="/2021/01/22/java/">java</a></h3>
-                <time itemprop="dateCreated" datetime=2021-01-22 >
-                    2021.01.22
-                </time>
-            </div>
-        
-            
-            
 
-            <div class="collection-item">
-                <h3><a href="/2021/01/19/cPlusPlusLinkList/">cPlusPlusLinkList</a></h3>
-                <time itemprop="dateCreated" datetime=2021-01-19 >
-                    2021.01.19
-                </time>
-            </div>
-        
-            
-            
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=java&url=https://blog.duters-wu.cn/2021/01/22/java/&pic=https://blog.duters-wu.cn/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=java&url=https://blog.duters-wu.cn/2021/01/22/java/&via=duters-wu" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.duters-wu.cn/2021/01/22/java/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=https://blog.duters-wu.cn/2021/01/22/java/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://blog.duters-wu.cn/2021/01/22/java/&title=java" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=duters-wu&title=java&summary=myblog&pics=https://blog.duters-wu.cn/null&url=https://blog.duters-wu.cn/2021/01/22/java/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=https://blog.duters-wu.cn/2021/01/22/java/&text=java" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <h2 id="Java-Start"><a href="#Java-Start" class="headerlink" title="Java Start"></a>Java Start</h2><ul>
+<li>How to get jdk?</li>
+<li>How to use it?</li>
+</ul>
 
-            <div class="collection-item">
-                <h3><a href="/2021/01/19/test/">test</a></h3>
-                <time itemprop="dateCreated" datetime=2021-01-19 >
-                    2021.01.19
-                </time>
-            </div>
-        
-            
-            
-                <div class="collection-title">
-                    <a href="/archives/2020"><h2>2020<small>归档</small></h2></a>
-                </div>
-                
-            
+  </div>
+  <!--文末结束语-->
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/2021/01/19/cPlusPlusLinkList/">
+        <span>cPlusPlusLinkList</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
 
-            <div class="collection-item">
-                <h3><a href="/2020/12/26/temp/">有限元分析在航空发动机制造中的应用</a></h3>
-                <time itemprop="dateCreated" datetime=2020-12-26 >
-                    2020.12.26
-                </time>
-            </div>
-        
-            
-            
 
-            <div class="collection-item">
-                <h3><a href="/2020/12/26/stock/">股市如人生,炒股即做人</a></h3>
-                <time itemprop="dateCreated" datetime=2020-12-26 >
-                    2020.12.26
-                </time>
-            </div>
-        
-            
-            
 
-            <div class="collection-item">
-                <h3><a href="/2020/12/26/optimization/">optimization</a></h3>
-                <time itemprop="dateCreated" datetime=2020-12-26 >
-                    2020.12.26
-                </time>
-            </div>
-        
-            
-            
 
-            <div class="collection-item">
-                <h3><a href="/2020/12/17/first-blog/">Python learning</a></h3>
-                <time itemprop="dateCreated" datetime=2020-12-17 >
-                    2020.12.17
-                </time>
-            </div>
-        
-            
-            
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/2021/01/22/java/" id="toc-header" class="mdui-ripple">文章目录</a>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-Start"><span class="toc-number">1.</span> <span class="toc-text">Java Start</span></a></li></ol>
+      </li>
+    </ul>
+  </div>
 
-            <div class="collection-item">
-                <h3><a href="/2020/12/17/hello-world/">Hello World</a></h3>
-                <time itemprop="dateCreated" datetime=2020-12-17 >
-                    2020.12.17
-                </time>
-            </div>
-        
-    </div>
-</div>
 
 
   </main>
@@ -373,6 +434,12 @@
 
 
 
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
 
 
 
