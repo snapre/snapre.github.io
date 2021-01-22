@@ -49,6 +49,24 @@
 ]]></content>
   </entry>
   <entry>
+    <title>optimization</title>
+    <url>/2020/12/26/optimization/</url>
+    <content><![CDATA[<h1 id="methods-of-optimization"><a href="#methods-of-optimization" class="headerlink" title="methods of optimization"></a>methods of optimization</h1><p><strong>作业 5.</strong> 设函数 $ f:\mathbb{R}^n \to \mathbb{R}$ 连续二次可微，$ {x^k}$ 由某下降算法生成（即 $d^k$ 为下降方向），$\alpha_k$ 由Wolfe-Powell原则生成。已知   $x^k \to x^*$，并且 $\nabla f(x^*)=0,\nabla^2f(x^*)\mathbb{&gt;}0$。令<br>$$<br>\delta_k := \frac{\Vert\nabla f(x^k)+\nabla^2f(x^k)d^k\Vert}{\Vert d^k \Vert}<br>$$<br>如果 $\delta_k \to 0$，证明下述结论成立：<br>$\space$（1）当 $k$ 充分大时，必有步长 $\alpha_k=1;$<br>$\space$（2）序列 ${x^k}$ 超线性收敛。</p>
+<blockquote>
+<p>解答：（1）</p>
+</blockquote>
+<h1 id="C-周期发生器"><a href="#C-周期发生器" class="headerlink" title="C++ 周期发生器"></a>C++ 周期发生器</h1><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> val, gen();</span><br><span class="line">    <span class="keyword">int</span> k = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Signal Is:\n&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (;;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (k &gt; <span class="number">2</span>)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        val = gen();</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d%*c\n&quot;</span>, val, val + <span class="number">1</span>, <span class="string">&#x27;*&#x27;</span>);</span><br><span class="line">        <span class="keyword">if</span> (val == <span class="number">0</span>)</span><br><span class="line">            k++;</span><br><span class="line">    &#125;</span><br><span class="line">    getchar();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gen</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> top = <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> dirction = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (i==top+<span class="number">1</span>) &#123;dirction = <span class="number">-1</span>; i -= <span class="number">2</span>;&#125;</span><br><span class="line">    <span class="keyword">if</span> (i==<span class="number">-1</span>) &#123;dirction = <span class="number">1</span>; i += <span class="number">2</span>;&#125;</span><br><span class="line">    <span class="keyword">if</span> (i&lt;=top &amp;&amp; dirction==<span class="number">1</span>) <span class="keyword">return</span> i++;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> i--;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>计算数学</category>
+        <category>运筹学</category>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>优化算法</tag>
+        <tag>Hello</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>股市如人生,炒股即做人</title>
     <url>/2020/12/26/stock/</url>
     <content><![CDATA[<h1 id="股市如人生-炒股即做人"><a href="#股市如人生-炒股即做人" class="headerlink" title="股市如人生,炒股即做人"></a>股市如人生,炒股即做人</h1><p>贪婪、恐惧、多疑、浮躁,人性的弱点都在股市中暴露无遗。可以说,炒股的过程就是锻炼人性的过程。当你的性格变得勇敢、冷静、专注、不悔时,你就达到了成功的顶峰。王国维说,人生有三种境界,分别用古人的三句诗词来形容,我看放在股市也挺合适。</p>
@@ -94,43 +112,6 @@
       </categories>
       <tags>
         <tag>stock</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>optimization</title>
-    <url>/2020/12/26/optimization/</url>
-    <content><![CDATA[<h1 id="methods-of-optimization"><a href="#methods-of-optimization" class="headerlink" title="methods of optimization"></a>methods of optimization</h1><p><strong>作业 5.</strong> 设函数 $ f:\mathbb{R}^n \to \mathbb{R}$ 连续二次可微，$ {x^k}$ 由某下降算法生成（即 $d^k$ 为下降方向），$\alpha_k$ 由Wolfe-Powell原则生成。已知   $x^k \to x^*$，并且 $\nabla f(x^*)=0,\nabla^2f(x^*)\mathbb{&gt;}0$。令<br>$$<br>\delta_k := \frac{\Vert\nabla f(x^k)+\nabla^2f(x^k)d^k\Vert}{\Vert d^k \Vert}<br>$$<br>如果 $\delta_k \to 0$，证明下述结论成立：<br>$\space$（1）当 $k$ 充分大时，必有步长 $\alpha_k=1;$<br>$\space$（2）序列 ${x^k}$ 超线性收敛。</p>
-<blockquote>
-<p>解答：（1）</p>
-</blockquote>
-<h1 id="C-周期发生器"><a href="#C-周期发生器" class="headerlink" title="C++ 周期发生器"></a>C++ 周期发生器</h1><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> val, gen();</span><br><span class="line">    <span class="keyword">int</span> k = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Signal Is:\n&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (;;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (k &gt; <span class="number">2</span>)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        val = gen();</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d%*c\n&quot;</span>, val, val + <span class="number">1</span>, <span class="string">&#x27;*&#x27;</span>);</span><br><span class="line">        <span class="keyword">if</span> (val == <span class="number">0</span>)</span><br><span class="line">            k++;</span><br><span class="line">    &#125;</span><br><span class="line">    getchar();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gen</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> top = <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> dirction = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (i==top+<span class="number">1</span>) &#123;dirction = <span class="number">-1</span>; i -= <span class="number">2</span>;&#125;</span><br><span class="line">    <span class="keyword">if</span> (i==<span class="number">-1</span>) &#123;dirction = <span class="number">1</span>; i += <span class="number">2</span>;&#125;</span><br><span class="line">    <span class="keyword">if</span> (i&lt;=top &amp;&amp; dirction==<span class="number">1</span>) <span class="keyword">return</span> i++;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> i--;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>计算数学</category>
-        <category>运筹学</category>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>优化算法</tag>
-        <tag>Hello</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>test</title>
-    <url>/2021/01/19/test/</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="37a2ff44dcae7ca5c3fd96e045169fbe535dc739b3126e5ed2f65343ff902a5a">8857952509ef9895f61625fe2d594ef3cc590fc6c8a6b7c7009ed8efde68c86c3e02b751d74f88af1d3f1adcd294e5e364560dbdf01d5a459f560738a829bd2a0c830c9b0d109e6badf824b7cc95704dfdb07facd69c233198e5d526c6ac7e531c9f5742d50d81c37c9fcfb69d57d521936f50ff5afc6dec6cbefbf8ba37c36b4ae5a93687d5db48ceac83f70b056109</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-      <tags>
-        <tag>作为日记加密</tag>
       </tags>
   </entry>
   <entry>
@@ -180,6 +161,25 @@
       </categories>
       <tags>
         <tag>HelloWorld</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>test</title>
+    <url>/2021/01/19/test/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="37a2ff44dcae7ca5c3fd96e045169fbe535dc739b3126e5ed2f65343ff902a5a">8857952509ef9895f61625fe2d594ef3cc590fc6c8a6b7c7009ed8efde68c86c3e02b751d74f88af1d3f1adcd294e5e364560dbdf01d5a459f560738a829bd2a0c830c9b0d109e6badf824b7cc95704dfdb07facd69c233198e5d526c6ac7e531c9f5742d50d81c37c9fcfb69d57d521936f50ff5afc6dec6cbefbf8ba37c36b4ae5a93687d5db48ceac83f70b056109</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <tags>
+        <tag>作为日记加密</tag>
       </tags>
   </entry>
 </search>
