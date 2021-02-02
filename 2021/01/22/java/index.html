@@ -1,370 +1,233 @@
+
+
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    
-    <meta name="renderer" content="webkit"/>
-    <meta name="force-rendering" content="webkit"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
-    
-    
-        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
-        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
-    
-    
-    
-        <link rel="shortcut icon" href="/icons/favicon.ico">
-    
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="myblog">
+  <meta name="author" content="duters-wu">
+  <meta name="keywords" content="python nodejs rust">
+  <title>How to use javap? - duters-wu</title>
 
-    
-    
-        
-<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
-
-    
-    
-<link rel="stylesheet" href="/css/main.css">
-<link rel="stylesheet" href="/css/iconfont.css">
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
 
-    
-    
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
 
+  
     
-        <script data-ad-client="ca-" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
 
 
 
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
 
 
 
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
 
 
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
 
 
-
-
-    
-        <script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        
-            load: ['[tex]/mhchem'],
-        
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        
-            packages: {'[+]': ['mhchem']},
-        
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-          
-
-
-    
-    
-    <title>
-        
-            How to use javap? | duters-wu
-        
-    </title>
-    
-    
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"duters-wu.gitee.io","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
 <meta name="generator" content="Hexo 5.3.0"></head>
-<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-teal mdui-theme-accent-blue">
-  
-  <header class="mdui-appbar mdui-appbar-fixed">
-  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
-    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
-    <a href="/" class="mdui-typo-headline">duters-wu</a>
-    <a href="/" class="header-subtitle mdui-typo-headline">blog</a>
-    <div class="mdui-toolbar-spacer"></div>
-    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
-  </div>
-</header>
 
-<div class="mdui-dialog" id="search">
-  
-    <div class="search-form">
-      <input type="search" class="search-form-input" placeholder="请输入关键字" onfocus="listenSearchFunc()">
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>bobbyGo</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
     </div>
-    <div class="search-result" data-resource="/search.xml"></div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="How to use javap?">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-01-22 19:26" pubdate>
+        2021年1月22日 晚上
+      </time>
+    </span>
   
 </div>
 
-  <aside id="sidebar" class="mdui-drawer">
-    <div class="mdui-tab" mdui-tab>
-        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">站点概览</a>
-        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">关于</a>
-    </div>
-
-    
-    <div id="sidebar-tab1" class="mdui-p-a-1">
-        <div class="mdui-list">
-            
-                
-                <a href="/" class="mdui-list-item mdui-ripple">
-                    <div class="mdui-list-item-icon">
-                        <i class="iconfont icon-home"></i>
-                    </div>
-                    <div class="mdui-list-item-content">主页</div>
-                </a>
-            
-                
-                <a href="/tags/" class="mdui-list-item mdui-ripple">
-                    <div class="mdui-list-item-icon">
-                        <i class="iconfont icon-bookmark"></i>
-                    </div>
-                    <div class="mdui-list-item-content">标签</div>
-                </a>
-            
-                
-                <a href="/categories/" class="mdui-list-item mdui-ripple">
-                    <div class="mdui-list-item-icon">
-                        <i class="iconfont icon-folder"></i>
-                    </div>
-                    <div class="mdui-list-item-content">分类</div>
-                </a>
-            
-                
-                <a href="/archives/" class="mdui-list-item mdui-ripple">
-                    <div class="mdui-list-item-icon">
-                        <i class="iconfont icon-archive"></i>
-                    </div>
-                    <div class="mdui-list-item-content">归档</div>
-                </a>
-            
-                
-                <a href="/tools/" class="mdui-list-item mdui-ripple">
-                    <div class="mdui-list-item-icon">
-                        <i class="iconfont icon-tools"></i>
-                    </div>
-                    <div class="mdui-list-item-content">工具箱</div>
-                </a>
-            
-                
-                <a href="/about/" class="mdui-list-item mdui-ripple">
-                    <div class="mdui-list-item-icon">
-                        <i class="iconfont icon-user"></i>
-                    </div>
-                    <div class="mdui-list-item-content">关于</div>
-                </a>
-            
-            <div class="mdui-list-item mdui-ripple">
-                <div class="mdui-list-item-icon">
-                    <i class="iconfont icon-moon"></i>
-                </div>
-                <div class="mdui-list-item-content">夜间模式</div>
-                <label class="mdui-switch" id="darkmode">
-                  <input type="checkbox" id="nightmode_switch"/>
-                  <i class="mdui-switch-icon"></i>
-                </label>
-            </div>           
-        </div>
-    </div>
-
-    
-    <div id="sidebar-tab2" class="mdui-p-a-1">
-        <div class="sidebar-overview">
-            <div class="sidebar-avatar">
-                
-                    <img src="/icons/avatar.gif"/>
-                
-            </div>
-            <div class="sidebar-author-name">duters-wu</div>
-            <div class="sidebar-description">myblog</div>
-        </div>
-        <div class="sidebar-links">
-            
-                
-                <div class="mdui-chip">
-                    <span class="mdui-chip-icon"><i class="iconfont icon-mail"></i></span>
-                    <a href="mailto:xiangwu619@gmail.com" class="mdui-chip-title">E-Mail</a>
-                </div>
-            
-                
-                <div class="mdui-chip">
-                    <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
-                    <a target="_blank" rel="noopener" href="https://github.com/duters-wu" class="mdui-chip-title">GitHub</a>
-                </div>
-            
-                
-                <div class="mdui-chip">
-                    <span class="mdui-chip-icon"><i class="iconfont icon-apple"></i></span>
-                    <a target="_blank" rel="noopener" href="http://www.xxyz.cn" class="mdui-chip-title">新新宇宙</a>
-                </div>
-            
-                
-                <div class="mdui-chip">
-                    <span class="mdui-chip-icon"><i class="iconfont icon-weibo"></i></span>
-                    <a target="_blank" rel="noopener" href="https://weibo.com/u/6520807353/home?topnav=1&wvr=6" class="mdui-chip-title">Weibo</a>
-                </div>
-            
-                
-                <div class="mdui-chip">
-                    <span class="mdui-chip-icon"><i class="iconfont icon-steam"></i></span>
-                    <a target="_blank" rel="noopener" href="https://bobbygo.gitee.io" class="mdui-chip-title">Bobby Carrot</a>
-                </div>
-            
-        </div>
-        <ul class="mdui-list" mdui-collapse="{accordion: true}">
-            <li class="mdui-collapse-item">
-                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-                    <div class="mdui-list-item-icon">
-                        <i class="iconfont icon-link"></i>
-                    </div>
-                    <div class="mdui-list-item-content">友情链接</div>
-                    <div class="mdui-collapse-item-arrow">
-                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
-                    </div>
-                </div>
-                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
-                    
-                        <a target="_blank" rel="noopener" href="https://garybear.cn/hexo-theme-meadow/" class="mdui-list-item mdui-ripple">
-                            Meadow说明文档
-                        </a>
-                    
-                        <a target="_blank" rel="noopener" href="http://www.xxyz.cn" class="mdui-list-item mdui-ripple">
-                            新新宇宙绿色游戏
-                        </a>
-                    
-                </ul>
-            </li>
-        </ul>
-    </div>
-
-    <div class="mdui-divider"></div>
-    
-    
-</aside>
+<div class="mt-1">
   
-  <main id="main-contain" class="mdui-container mdui-m-t-5">
-    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
-  <header class="mdui-card-media">
     
-    
-      <div class="post-header"> 
-  <a class="post-header-title" href="/2021/01/22/java/">How to use javap?</a>
-  <div class="post-header-meta">
-    <span>
-      <span class="iconfont icon-calendar"></span>
-      发布于:&nbsp;2021-01-22
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      621 字
     </span>
-    <span>
-      <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-01-23
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      10
+       分钟
     </span>
-    <span>
-      <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/Java/">Java</a>
-    </span>
-    
-      <span>
-        <span class="iconfont icon-eye"></span>
-        阅读次数:&nbsp;
-        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
-      </span>
-    
-  </div>
-</div>   
-    
+  
 
+  
+  
+</div>
 
+            
+          </div>
 
-    
-    
-    <div class="mdui-card-menu">
-    
-      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
-      <ul class="mdui-menu" id="share_menu">
-        <li class="mdui-menu-item">
-          <a href="http://service.weibo.com/share/share.php?appkey=&title=How to use javap?&url=https://duters-wu.gitee.io/2021/01/22/java/&pic=https://duters-wu.gitee.io/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
-        </li>
-        <li class="mdui-menu-item">
-          <a href="https://twitter.com/intent/tweet?text=How to use javap?&url=https://duters-wu.gitee.io/2021/01/22/java/&via=duters-wu" target="_blank" class="mdui-ripple">分享到 Twitter</a>
-        </li>
-        <li class="mdui-menu-item">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https://duters-wu.gitee.io/2021/01/22/java/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
-        </li>
-        <li class="mdui-menu-item">
-          <a href="https://plus.google.com/share?url=https://duters-wu.gitee.io/2021/01/22/java/" target="_blank" class="mdui-ripple">分享到 Google+</a>
-        </li>
-        <li class="mdui-menu-item">
-          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://duters-wu.gitee.io/2021/01/22/java/&title=How to use javap?" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
-        </li>
-        <li class="mdui-menu-item">
-          <a href="http://connect.qq.com/widget/shareqq/index.html?site=duters-wu&title=How to use javap?&summary=myblog&pics=https://duters-wu.gitee.io/null&url=https://duters-wu.gitee.io/2021/01/22/java/" target="_blank" class="mdui-ripple">分享到 QQ</a>
-        </li>
-        <li class="mdui-menu-item">
-          <a href="https://telegram.me/share/url?url=https://duters-wu.gitee.io/2021/01/22/java/&text=How to use javap?" target="_blank" class="mdui-ripple">分享到 Telegram</a>
-        </li>
-      </ul>
-    
-  </div>
+          
+        </div>
+      </div>
+    </div>
   </header>
-  
-  
-  
-  
-  <div class="post-tags">
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/Java-Tools/ >Java Tools</a>
-      </i>
-    
-  </div>
 
-  
-  <div class="mdui-card-content mdui-typo mdui-p-x-4">
-    <h2 id="Javap-Use"><a href="#Javap-Use" class="headerlink" title="Javap Use"></a>Javap Use</h2><p>javap 是JDK自带的反汇编器，可以查看java编译器为我们生成的字节码。<br>语法：</p>
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">How to use javap?</h1>
+            
+            <div class="markdown-body">
+              <h2 id="Javap-Use"><a href="#Javap-Use" class="headerlink" title="Javap Use"></a>Javap Use</h2><p>javap 是JDK自带的反汇编器，可以查看java编译器为我们生成的字节码。<br>语法：</p>
 <ul>
 <li>javap [ 命令选项 ] class. . .</li>
 <li>javap 命令用于解析类文件。其输出取决于所用的选项</li>
@@ -383,110 +246,220 @@
 <li>-c 输出类中各方法的未解析的代码，即构成 Java 字节码的指令。</li>
 <li>-verbose 输出堆栈大小、各方法的 locals 及 args 数,以及class文件的编译版本</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">javac javaFile.java</span><br><span class="line">javap -c javaFile</span><br></pre></td></tr></table></figure>
-<p>反汇编成java字节码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">Compiled from <span class="string">&quot;Main.java&quot;</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Main</span><span class="params">()</span></span>;</span><br><span class="line">    Code:</span><br><span class="line">       <span class="number">0</span>: aload_0</span><br><span class="line">       1: invokespecial #1                  // Method java/lang/Object.&quot;&lt;init&gt;&quot;:()V</span><br><span class="line">       <span class="number">4</span>: <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(java.lang.String[])</span></span>;</span><br><span class="line">    Code:</span><br><span class="line">       0: new           #7                  // class java/util/ArrayList</span><br><span class="line">       <span class="number">3</span>: dup</span><br><span class="line">       4: invokespecial #9                  // Method java/util/ArrayList.&quot;&lt;init&gt;&quot;:()V</span><br><span class="line">       <span class="number">7</span>: astore_1</span><br><span class="line">       <span class="number">8</span>: aload_1</span><br><span class="line">       9: ldc           #10                 // String Google</span><br><span class="line">      11: invokevirtual #12                 // Method java/util/ArrayList.add:(Ljava/lang/Object;)Z</span><br><span class="line">      <span class="number">14</span>: pop</span><br><span class="line">      <span class="number">15</span>: aload_1</span><br><span class="line">      16: ldc           #16                 // String Runoob</span><br><span class="line">      18: invokevirtual #12                 // Method java/util/ArrayList.add:(Ljava/lang/Object;)Z</span><br><span class="line">      <span class="number">21</span>: pop</span><br><span class="line">      <span class="number">22</span>: aload_1</span><br><span class="line">      23: ldc           #18                 // String Taobao</span><br><span class="line">      25: invokevirtual #12                 // Method java/util/ArrayList.add:(Ljava/lang/Object;)Z</span><br><span class="line">      <span class="number">28</span>: pop</span><br><span class="line">      <span class="number">29</span>: aload_1</span><br><span class="line">      30: ldc           #20                 // String Weibo</span><br><span class="line">      32: invokevirtual #12                 // Method java/util/ArrayList.add:(Ljava/lang/Object;)Z</span><br><span class="line">      <span class="number">35</span>: pop</span><br><span class="line">      36: new           #22                 // class test/Person</span><br><span class="line">      <span class="number">39</span>: dup</span><br><span class="line">      40: ldc           #24                 // String wuxiang</span><br><span class="line">      42: ldc           #26                 // String male</span><br><span class="line">      <span class="number">44</span>: aload_1</span><br><span class="line">      45: invokespecial #28                 // Method test/Person.&quot;&lt;init&gt;&quot;:(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V</span><br><span class="line">      <span class="number">48</span>: astore_2</span><br><span class="line">      49: getstatic     #31                 // Field java/lang/System.out:Ljava/io/PrintStream;</span><br><span class="line">      <span class="number">52</span>: aload_2</span><br><span class="line">      53: invokevirtual #37                 // Method java/io/PrintStream.println:(Ljava/lang/Object;)V</span><br><span class="line">      56: new           #43                 // class java/lang/String</span><br><span class="line">      <span class="number">59</span>: dup</span><br><span class="line">      60: ldc           #45                 // String temp1</span><br><span class="line">      62: invokespecial #47                 // Method java/lang/String.&quot;&lt;init&gt;&quot;:(Ljava/lang/String;)V</span><br><span class="line">      <span class="number">65</span>: astore_3</span><br><span class="line">      66: ldc           #45                 // String temp1</span><br><span class="line">      <span class="number">68</span>: astore        <span class="number">4</span></span><br><span class="line">      70: getstatic     #31                 // Field java/lang/System.out:Ljava/io/PrintStream;</span><br><span class="line">      <span class="number">73</span>: aload_3</span><br><span class="line">      <span class="number">74</span>: aload         <span class="number">4</span></span><br><span class="line">      <span class="number">76</span>: if_acmpne     <span class="number">83</span></span><br><span class="line">      <span class="number">79</span>: iconst_1</span><br><span class="line">      <span class="number">80</span>: goto          <span class="number">84</span></span><br><span class="line">      <span class="number">83</span>: iconst_0</span><br><span class="line">      84: invokevirtual #50                 // Method java/io/PrintStream.println:(Z)V</span><br><span class="line">      87: getstatic     #31                 // Field java/lang/System.out:Ljava/io/PrintStream;</span><br><span class="line">      <span class="number">90</span>: aload_3</span><br><span class="line">      91: invokevirtual #53                 // Method java/lang/String.hashCode:()I</span><br><span class="line">      94: invokevirtual #57                 // Method java/io/PrintStream.println:(I)V</span><br><span class="line">      97: getstatic     #31                 // Field java/lang/System.out:Ljava/io/PrintStream;</span><br><span class="line">     <span class="number">100</span>: aload         <span class="number">4</span></span><br><span class="line">     102: invokevirtual #53                 // Method java/lang/String.hashCode:()I</span><br><span class="line">     105: invokevirtual #57                 // Method java/io/PrintStream.println:(I)V</span><br><span class="line">     108: ldc           #60                 // String Hello</span><br><span class="line">     <span class="number">110</span>: astore        <span class="number">4</span></span><br><span class="line">     <span class="number">112</span>: bipush        <span class="number">100</span></span><br><span class="line">     <span class="number">114</span>: istore        <span class="number">5</span></span><br><span class="line">     116: getstatic     #31                 // Field java/lang/System.out:Ljava/io/PrintStream;</span><br><span class="line">     <span class="number">119</span>: iload         <span class="number">5</span></span><br><span class="line">     121: invokevirtual #57                 // Method java/io/PrintStream.println:(I)V</span><br><span class="line">     <span class="number">124</span>: <span class="keyword">return</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-  </div>
-  <!--文末结束语-->
-  
-  <!--页脚广告-->
-  
-  <div class="mdui-divider"></div>
-  
-  <nav>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">javac javaFile.java<br>javap -c javaFile<br></code></pre></td></tr></table></figure>
+<p>反汇编成java字节码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><code class="hljs java">Compiled from <span class="hljs-string">&quot;Main.java&quot;</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>&#123;<br>  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Main</span><span class="hljs-params">()</span></span>;<br>    Code:<br>       <span class="hljs-number">0</span>: aload_0<br>       1: invokespecial #1                  // Method java/lang/Object.&quot;&lt;init&gt;&quot;:()V<br>       <span class="hljs-number">4</span>: <span class="hljs-keyword">return</span><br><br>  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(java.lang.String[])</span></span>;<br>    Code:<br>       0: new           #7                  // class java/util/ArrayList<br>       <span class="hljs-number">3</span>: dup<br>       4: invokespecial #9                  // Method java/util/ArrayList.&quot;&lt;init&gt;&quot;:()V<br>       <span class="hljs-number">7</span>: astore_1<br>       <span class="hljs-number">8</span>: aload_1<br>       9: ldc           #10                 // String Google<br>      11: invokevirtual #12                 // Method java/util/ArrayList.add:(Ljava/lang/Object;)Z<br>      <span class="hljs-number">14</span>: pop<br>      <span class="hljs-number">15</span>: aload_1<br>      16: ldc           #16                 // String Runoob<br>      18: invokevirtual #12                 // Method java/util/ArrayList.add:(Ljava/lang/Object;)Z<br>      <span class="hljs-number">21</span>: pop<br>      <span class="hljs-number">22</span>: aload_1<br>      23: ldc           #18                 // String Taobao<br>      25: invokevirtual #12                 // Method java/util/ArrayList.add:(Ljava/lang/Object;)Z<br>      <span class="hljs-number">28</span>: pop<br>      <span class="hljs-number">29</span>: aload_1<br>      30: ldc           #20                 // String Weibo<br>      32: invokevirtual #12                 // Method java/util/ArrayList.add:(Ljava/lang/Object;)Z<br>      <span class="hljs-number">35</span>: pop<br>      36: new           #22                 // class test/Person<br>      <span class="hljs-number">39</span>: dup<br>      40: ldc           #24                 // String wuxiang<br>      42: ldc           #26                 // String male<br>      <span class="hljs-number">44</span>: aload_1<br>      45: invokespecial #28                 // Method test/Person.&quot;&lt;init&gt;&quot;:(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V<br>      <span class="hljs-number">48</span>: astore_2<br>      49: getstatic     #31                 // Field java/lang/System.out:Ljava/io/PrintStream;<br>      <span class="hljs-number">52</span>: aload_2<br>      53: invokevirtual #37                 // Method java/io/PrintStream.println:(Ljava/lang/Object;)V<br>      56: new           #43                 // class java/lang/String<br>      <span class="hljs-number">59</span>: dup<br>      60: ldc           #45                 // String temp1<br>      62: invokespecial #47                 // Method java/lang/String.&quot;&lt;init&gt;&quot;:(Ljava/lang/String;)V<br>      <span class="hljs-number">65</span>: astore_3<br>      66: ldc           #45                 // String temp1<br>      <span class="hljs-number">68</span>: astore        <span class="hljs-number">4</span><br>      70: getstatic     #31                 // Field java/lang/System.out:Ljava/io/PrintStream;<br>      <span class="hljs-number">73</span>: aload_3<br>      <span class="hljs-number">74</span>: aload         <span class="hljs-number">4</span><br>      <span class="hljs-number">76</span>: if_acmpne     <span class="hljs-number">83</span><br>      <span class="hljs-number">79</span>: iconst_1<br>      <span class="hljs-number">80</span>: goto          <span class="hljs-number">84</span><br>      <span class="hljs-number">83</span>: iconst_0<br>      84: invokevirtual #50                 // Method java/io/PrintStream.println:(Z)V<br>      87: getstatic     #31                 // Field java/lang/System.out:Ljava/io/PrintStream;<br>      <span class="hljs-number">90</span>: aload_3<br>      91: invokevirtual #53                 // Method java/lang/String.hashCode:()I<br>      94: invokevirtual #57                 // Method java/io/PrintStream.println:(I)V<br>      97: getstatic     #31                 // Field java/lang/System.out:Ljava/io/PrintStream;<br>     <span class="hljs-number">100</span>: aload         <span class="hljs-number">4</span><br>     102: invokevirtual #53                 // Method java/lang/String.hashCode:()I<br>     105: invokevirtual #57                 // Method java/io/PrintStream.println:(I)V<br>     108: ldc           #60                 // String Hello<br>     <span class="hljs-number">110</span>: astore        <span class="hljs-number">4</span><br>     <span class="hljs-number">112</span>: bipush        <span class="hljs-number">100</span><br>     <span class="hljs-number">114</span>: istore        <span class="hljs-number">5</span><br>     116: getstatic     #31                 // Field java/lang/System.out:Ljava/io/PrintStream;<br>     <span class="hljs-number">119</span>: iload         <span class="hljs-number">5</span><br>     121: invokevirtual #57                 // Method java/io/PrintStream.println:(I)V<br>     <span class="hljs-number">124</span>: <span class="hljs-keyword">return</span><br>&#125;<br></code></pre></td></tr></table></figure></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Java/">Java</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Java-Tools/">Java Tools</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/01/23/runoob/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">出走半生，归来仍是菜鸟</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/01/19/cPlusPlusLinkList/">
+                        <span class="hidden-mobile">cPlusPlusLinkList</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
     
-      <a rel="prev" class="post-nav-item mdui-float-left" href="/2021/01/23/runoob/">
-        <i class="iconfont icon-angle-left"></i>
-        <span>出走半生，归来仍是菜鸟</span>
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
       </a>
     
+
     
-      <a rel="next" class="post-nav-item mdui-float-right" href="/2021/01/19/cPlusPlusLinkList/">
-        <span>cPlusPlusLinkList</span>
-        <i class="iconfont icon-angle-right"></i>
-      </a>
-    
-  </nav>
-</article>
-
-
-
-
-  <div class="toc-button"  style="z-index: 100;">
-    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
-    <ul class="mdui-menu" id="toc">
-      <li class="mdui-menu-item">
-        <a href="/2021/01/22/java/" id="toc-header" class="mdui-ripple">文章目录</a>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Javap-Use"><span class="toc-number">1.</span> <span class="toc-text">Javap Use</span></a></li></ol>
-      </li>
-    </ul>
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
   </div>
+</div>
+    
 
-
-
+    
   </main>
-  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
-  <div class="mdui-container">
-    <div class="mdui-row">
-      
-        <a href="https://beian.miit.gov.cn" rel="noopener" target="_blank"></a>
-      
-      <span>
-        &copy; 2015 - 2021 
-        
-          <span style="color:#d9333f" class="iconfont icon-heart"></span>
-        
-        duters-wu
-      </span>
-    </div>
-    <div class="mdui-row">
-      
-        <div class="mdui-col-xs-6 mdui-text-right">
-          <span>Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a></span>
-        </div>
-        <div class="mdui-col-xs-6 mdui-text-left">
-          <span>Theme: <a href="https://github.com/kb1000fx/Meadow" rel="noopener" target="_blank">Meadow</a></span>
-        </div>
-      
-    </div>
-    <div class="mdui-row">
-      
-        <div class="mdui-col-xs-6 mdui-text-right">
-          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>总访客量 <span id="busuanzi_value_site_uv"></span></span>
-        </div>
-        <div class="mdui-col-xs-6 mdui-text-left">
-          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>总访问量 <span id="busuanzi_value_site_pv"></span></span>
-        </div>
-      
-    </div>
- </div>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
 </footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
   
-  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+    <script  src="/js/lazyload.js" ></script>
   
+
+
+
   
 
-    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
 
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({
-        startOnLoad: true,
-        theme: "default"
-    });</script>
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
 
 
 
 
-    
-<script src="/js/mdui.min.v1.0.0.js"></script>
 
 
 
 
-<script src="/js/meadow.js"></script>
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
 
 </body>
-</html >
+</html>
