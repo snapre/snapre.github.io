@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>bobbyCarrot</title>
-    <url>/2021/02/02/bobbyCarrot/</url>
-    <content><![CDATA[<h1 id="https-bobbygo-gitee-io"><a href="#https-bobbygo-gitee-io" class="headerlink" title="https://bobbygo.gitee.io"></a><a href="https://bobbygo.gitee.io">https://bobbygo.gitee.io</a></h1><script type="math/tex; mode=display">
-\delta_k := \frac{\Vert\nabla f(x^k)+\nabla^2f(x^k)d^k\Vert}{\Vert d^k \Vert}</script>]]></content>
-  </entry>
-  <entry>
     <title>Python learning</title>
     <url>/2020/12/17/first-blog/</url>
     <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> cv2<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span>() -&gt; <span class="hljs-keyword">None</span>:</span><br>    <span class="hljs-keyword">pass</span><br><br><span class="hljs-keyword">if</span> __main__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>    main()<br></code></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">$(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    alert(<span class="hljs-string">&#x27;RUNOOB&#x27;</span>);<br>&#125;);<br></code></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>bobbyCarrot</title>
+    <url>/2021/02/02/bobbyCarrot/</url>
+    <content><![CDATA[<h1 id="https-bobbygo-gitee-io"><a href="#https-bobbygo-gitee-io" class="headerlink" title="https://bobbygo.gitee.io"></a><a href="https://bobbygo.gitee.io">https://bobbygo.gitee.io</a></h1><script type="math/tex; mode=display">
+\delta_k := \frac{\Vert\nabla f(x^k)+\nabla^2f(x^k)d^k\Vert}{\Vert d^k \Vert}</script>]]></content>
   </entry>
   <entry>
     <title>cPlusPlusLinkList</title>
@@ -87,18 +87,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>出走半生，归来仍是菜鸟</title>
-    <url>/2021/01/23/runoob/</url>
-    <content><![CDATA[<h2 id="燕雀安知鸿鹄之志，鸿鹄安知菜鸟之志"><a href="#燕雀安知鸿鹄之志，鸿鹄安知菜鸟之志" class="headerlink" title="燕雀安知鸿鹄之志，鸿鹄安知菜鸟之志"></a>燕雀安知鸿鹄之志，鸿鹄安知菜鸟之志</h2><font face="Consolas" size=5>[\->RUNOOB.COM](https://www.runoob.com/)</font>
-]]></content>
-      <categories>
-        <category>learn</category>
-      </categories>
-      <tags>
-        <tag>runoob</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>optimization</title>
     <url>/2020/12/26/optimization/</url>
     <content><![CDATA[<h1 id="methods-of-optimization"><a href="#methods-of-optimization" class="headerlink" title="methods of optimization"></a>methods of optimization</h1><p><strong>作业 5.</strong> 设函数 $f:\mathbb{R}^n \to \mathbb{R}$ 连续二次可微，${x^k}$ 由某下降算法生成（即 $d^k$ 为下降方向），$\alpha_k$ 由Wolfe-Powell原则生成。已知 <script type="math/tex">x^k \to x^*</script>，并且 <script type="math/tex">\nabla f(x^*)=0,\nabla^2f(x^*)\mathbb{>}0</script>。令  </p>
@@ -116,6 +104,18 @@
       <tags>
         <tag>优化算法</tag>
         <tag>Hello</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>出走半生，归来仍是菜鸟</title>
+    <url>/2021/01/23/runoob/</url>
+    <content><![CDATA[<h2 id="燕雀安知鸿鹄之志，鸿鹄安知菜鸟之志"><a href="#燕雀安知鸿鹄之志，鸿鹄安知菜鸟之志" class="headerlink" title="燕雀安知鸿鹄之志，鸿鹄安知菜鸟之志"></a>燕雀安知鸿鹄之志，鸿鹄安知菜鸟之志</h2><font face="Consolas" size=5>[\->RUNOOB.COM](https://www.runoob.com/)</font>
+]]></content>
+      <categories>
+        <category>learn</category>
+      </categories>
+      <tags>
+        <tag>runoob</tag>
       </tags>
   </entry>
   <entry>
