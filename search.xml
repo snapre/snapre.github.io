@@ -43,6 +43,26 @@
       </tags>
   </entry>
   <entry>
+    <title>optimization</title>
+    <url>/2020/12/26/optimization/</url>
+    <content><![CDATA[<h1 id="methods-of-optimization"><a href="#methods-of-optimization" class="headerlink" title="methods of optimization"></a>methods of optimization</h1><p><strong>作业 5.</strong> 设函数 $f:\mathbb{R}^n \to \mathbb{R}$ 连续二次可微，${x^k}$ 由某下降算法生成（即 $d^k$ 为下降方向），$\alpha_k$ 由Wolfe-Powell原则生成。已知 <script type="math/tex">x^k \to x^*</script>，并且 <script type="math/tex">\nabla f(x^*)=0,\nabla^2f(x^*)\mathbb{>}0</script>。令  </p>
+<script type="math/tex; mode=display">
+\delta_k := \frac{\Vert\nabla f(x^k)+\nabla^2f(x^k)d^k\Vert}{\Vert d^k \Vert}</script><p>如果 $\delta_k \to 0$，证明下述结论成立：<br>$\space$（1）当 $k$ 充分大时，必有步长 $\alpha_k=1;$<br>$\space$（2）序列 ${x^k}$ 超线性收敛。</p>
+<blockquote>
+<p>解答：（1）</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>计算数学</category>
+        <category>运筹学</category>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>优化算法</tag>
+        <tag>Hello</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2020/12/17/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -86,26 +106,6 @@
       </categories>
       <tags>
         <tag>Java Tools</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>optimization</title>
-    <url>/2020/12/26/optimization/</url>
-    <content><![CDATA[<h1 id="methods-of-optimization"><a href="#methods-of-optimization" class="headerlink" title="methods of optimization"></a>methods of optimization</h1><p><strong>作业 5.</strong> 设函数 $f:\mathbb{R}^n \to \mathbb{R}$ 连续二次可微，${x^k}$ 由某下降算法生成（即 $d^k$ 为下降方向），$\alpha_k$ 由Wolfe-Powell原则生成。已知 <script type="math/tex">x^k \to x^*</script>，并且 <script type="math/tex">\nabla f(x^*)=0,\nabla^2f(x^*)\mathbb{>}0</script>。令  </p>
-<script type="math/tex; mode=display">
-\delta_k := \frac{\Vert\nabla f(x^k)+\nabla^2f(x^k)d^k\Vert}{\Vert d^k \Vert}</script><p>如果 $\delta_k \to 0$，证明下述结论成立：<br>$\space$（1）当 $k$ 充分大时，必有步长 $\alpha_k=1;$<br>$\space$（2）序列 ${x^k}$ 超线性收敛。</p>
-<blockquote>
-<p>解答：（1）</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>计算数学</category>
-        <category>运筹学</category>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>优化算法</tag>
-        <tag>Hello</tag>
       </tags>
   </entry>
   <entry>
