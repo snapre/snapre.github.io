@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      229 字
+      125 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3
+      1
        分钟
     </span>
   
@@ -233,7 +233,7 @@
 <blockquote>
 <p>解答：（1）</p>
 </blockquote>
-<h1 id="C-周期发生器"><a href="#C-周期发生器" class="headerlink" title="C++ 周期发生器"></a>C++ 周期发生器</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">int</span> val, gen();<br>    <span class="hljs-keyword">int</span> k = <span class="hljs-number">0</span>;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Signal Is:\n&quot;</span>);<br>    <span class="hljs-keyword">for</span> (;;)<br>    &#123;<br>        <span class="hljs-keyword">if</span> (k &gt; <span class="hljs-number">2</span>)<br>            <span class="hljs-keyword">break</span>;<br>        val = gen();<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d%*c\n&quot;</span>, val, val + <span class="hljs-number">1</span>, <span class="hljs-string">&#x27;*&#x27;</span>);<br>        <span class="hljs-keyword">if</span> (val == <span class="hljs-number">0</span>)<br>            k++;<br>    &#125;<br>    getchar();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">gen</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> top = <span class="hljs-number">3</span>;<br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> dirction = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">if</span> (i==top+<span class="hljs-number">1</span>) &#123;dirction = <span class="hljs-number">-1</span>; i -= <span class="hljs-number">2</span>;&#125;<br>    <span class="hljs-keyword">if</span> (i==<span class="hljs-number">-1</span>) &#123;dirction = <span class="hljs-number">1</span>; i += <span class="hljs-number">2</span>;&#125;<br>    <span class="hljs-keyword">if</span> (i&lt;=top &amp;&amp; dirction==<span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> i++;<br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> i--;<br>&#125;<br></code></pre></td></tr></table></figure>
+
             </div>
             <hr>
             <div>
@@ -269,9 +269,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/12/26/stock/">
+                      <a href="/2021/01/19/test/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">股市如人生,炒股即做人</span>
+                        <span class="hidden-mobile">test</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
