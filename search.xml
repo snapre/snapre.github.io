@@ -167,4 +167,16 @@
         <tag>作为日记加密</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Java多线程</title>
+    <url>/2021/02/05/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
+    <content><![CDATA[<p><img src="/img/code.png" alt=""></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java多线程</tag>
+      </tags>
+  </entry>
 </search>
