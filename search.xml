@@ -37,7 +37,7 @@
       </tags>
   </entry>
   <entry>
-    <title>cpp1</title>
+    <title>C Plus Plus</title>
     <url>/2021/02/03/cpp1/</url>
     <content><![CDATA[<h1 id="C-的泛型程序设计思想"><a href="#C-的泛型程序设计思想" class="headerlink" title="C++ 的泛型程序设计思想"></a>C++ 的泛型程序设计思想</h1><ul>
 <li>C++ 语言的核心优势之一就是便于软件的重用</li>
