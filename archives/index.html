@@ -171,13 +171,19 @@
                 
 
 <div class="list-group">
-  <p class="h4">共计 10 篇文章</p>
+  <p class="h4">共计 11 篇文章</p>
   <hr>
   
   
     
       
       <p class="h5">2021</p>
+    
+    <a href="/2021/02/27/whole-arrangement/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">全排列输出（主流语言实现）</span>
+      <time style="float: right;">02-27</time>
+    </a>
+  
     
     <a href="/2021/02/05/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="list-group-item list-group-item-action">
       <span class="archive-post-title">Java多线程</span>
@@ -235,14 +241,20 @@
       <time style="float: right;">12-17</time>
     </a>
   
-    
-    <a href="/2020/12/17/hello-world/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Hello World</span>
-      <time style="float: right;">12-17</time>
-    </a>
-  
 </div>
 
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+  
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
+      ele.href += '#board';
+    }
+  </script>
 
 
 

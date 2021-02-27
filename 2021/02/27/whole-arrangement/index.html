@@ -17,7 +17,7 @@
   <meta name="description" content="myblog">
   <meta name="author" content="duters-wu">
   <meta name="keywords" content="python nodejs rust">
-  <title>Java多线程 - duters-wu</title>
+  <title>全排列输出（主流语言实现） - duters-wu</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -162,7 +162,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Java多线程">
+            <span class="h2" id="subtitle" title="全排列输出（主流语言实现）">
               
             </span>
 
@@ -172,8 +172,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-02-05 16:21" pubdate>
-        2021年2月5日 下午
+      <time datetime="2021-02-27 14:35" pubdate>
+        2021年2月27日 下午
       </time>
     </span>
   
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      0 字
+      297 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      5
        分钟
     </span>
   
@@ -224,10 +224,12 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Java多线程</h1>
+            <h1 style="display: none">全排列输出（主流语言实现）</h1>
             
             <div class="markdown-body">
-              <p><img src="/img/code.png" srcset="/img/loading.gif" alt=""></p>
+              <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// C/C++ Call</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string.h&gt;</span></span><br><br><span class="hljs-keyword">int</span> num = <span class="hljs-number">0</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">char</span> *a, <span class="hljs-keyword">char</span> *b)</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-keyword">char</span> temp = *a;<br>  *a = *b;<br>  *b = temp;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">whole_arrangement</span><span class="hljs-params">(<span class="hljs-keyword">char</span> ch[], <span class="hljs-keyword">int</span> k, <span class="hljs-keyword">int</span> len)</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-keyword">int</span> i;<br>  <span class="hljs-keyword">if</span> (k == len)<br>  &#123;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s&quot;</span>, ch);<br>    num++;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;, &quot;</span>);<br>    <span class="hljs-keyword">return</span>;<br>  &#125;<br>  <span class="hljs-keyword">else</span><br>  &#123;<br>    <span class="hljs-keyword">for</span> (i = k; i &lt;= len; i++)<br>    &#123;<br>      swap(&amp;ch[k], &amp;ch[i]);<br>      whole_arrangement(ch, k + <span class="hljs-number">1</span>, len);<br>      swap(&amp;ch[k], &amp;ch[i]);<br>    &#125;<br>  &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>  <span class="hljs-keyword">char</span> ch[] = <span class="hljs-string">&quot;abc&quot;</span>;<br>  whole_arrangement(ch, <span class="hljs-number">0</span>, <span class="hljs-built_in">strlen</span>(ch) - <span class="hljs-number">1</span>);<br>  <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\nCOUNT: %d\n&quot;</span>, num);<br>  system(<span class="hljs-string">&quot;pause&quot;</span>);<br>  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// Java Call</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>&#123;<br>  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>    String ch = <span class="hljs-string">&quot;abc&quot;</span>;<br>    wholeArrangement(ch.toCharArray(), <span class="hljs-number">0</span>);<br><br>  &#125;<br><br>  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">wholeArrangement</span><span class="hljs-params">(<span class="hljs-keyword">char</span>[] ch, <span class="hljs-keyword">int</span> k)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> i;<br>    <span class="hljs-keyword">if</span> (k == ch.length - <span class="hljs-number">1</span>) &#123;<br>      System.out.print(ch);<br>      System.out.print(<span class="hljs-string">&quot;, &quot;</span>);<br>      <span class="hljs-keyword">return</span>;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>      <span class="hljs-keyword">for</span> (i = k; i &lt;= ch.length - <span class="hljs-number">1</span>; i++) &#123;<br>        <span class="hljs-keyword">char</span> temp = ch[k];<br>        ch[k] = ch[i];<br>        ch[i] = temp;<br>        wholeArrangement(ch, k + <span class="hljs-number">1</span>);<br>        temp = ch[k];<br>        ch[k] = ch[i];<br>        ch[i] = temp;<br>      &#125;<br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># python Call</span><br><span class="hljs-keyword">from</span> typing <span class="hljs-keyword">import</span> List<br><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">whole_arrangement</span>(<span class="hljs-params">ch: List[<span class="hljs-built_in">str</span>], k: <span class="hljs-built_in">int</span></span>) -&gt; <span class="hljs-keyword">None</span>:</span><br>    <span class="hljs-keyword">if</span> k == <span class="hljs-built_in">len</span>(ch):<br>        print(<span class="hljs-string">&quot;&quot;</span>.join(ch), end=<span class="hljs-string">&#x27;&#x27;</span>)<br>        print(<span class="hljs-string">&quot;, &quot;</span>, end=<span class="hljs-string">&#x27;&#x27;</span>)<br>        <span class="hljs-keyword">return</span><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(k, <span class="hljs-built_in">len</span>(ch)):<br>            temp = ch[k]<br>            ch[k] = ch[i]<br>            ch[i] = temp<br>            whole_arrangement(ch, k+<span class="hljs-number">1</span>)<br>            temp = ch[k]<br>            ch[k] = ch[i]<br>            ch[i] = temp<br><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span>() -&gt; <span class="hljs-keyword">None</span>:</span><br>    ch = <span class="hljs-string">&quot;abcde&quot;</span><br>    whole_arrangement(<span class="hljs-built_in">list</span>(ch), <span class="hljs-number">0</span>)<br><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>    main()<br></code></pre></td></tr></table></figure>
 
             </div>
             <hr>
@@ -237,7 +239,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/Java/">Java</a>
+                      <a class="hover-with-bg" href="/categories/C/">C</a>
                     
                   </div>
                 
@@ -245,7 +247,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/">Java多线程</a>
+                      <a class="hover-with-bg" href="/tags/C/">C</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Algorithm/">Algorithm</a>
                     
                   </div>
                 
@@ -258,18 +262,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/02/27/whole-arrangement/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">全排列输出（主流语言实现）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/02/03/cpp1/">
-                        <span class="hidden-mobile">C Plus Plus</span>
+                      <a href="/2021/02/05/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
+                        <span class="hidden-mobile">Java多线程</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
