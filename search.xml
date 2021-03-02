@@ -5,7 +5,14 @@
     <url>/2021/02/02/bobbyCarrot/</url>
     <content><![CDATA[<h2 id="（一）游戏制作的背景"><a href="#（一）游戏制作的背景" class="headerlink" title="（一）游戏制作的背景"></a>（一）游戏制作的背景</h2><p>有些经典的游戏在岁月中静躺了多年，每当再次打开的时候，总能给人满满的回忆<br>而且， 历久弥新，先看一张图：<br><img src="/img/oldPhone.jpg" alt=""><br>这是三星曾经一款非常流行的手机-Anycall,在十五多年前谁要是有这么一款手机，那简直太有面了，手机的里面有两款用Java写的游戏，多年后知到java是一门编程语言并学习后才知道为什么java这个字眼这么熟悉原来是因为这款手机里的那两个游戏</p>
 <h2 id="（二）在一个不眠之夜"><a href="#（二）在一个不眠之夜" class="headerlink" title="（二）在一个不眠之夜"></a>（二）在一个不眠之夜</h2><p>刚写完java代码的我拖着疲惫的身体上了床，在差点要睡着的时候，一个想法迸射了出来<br><strong>我要把那个兔子游戏(bobby carrot)搬到互联网上，让朋友家人也能够玩到这个15年前的岁月游戏</strong></p>
-<h2 id="（三）用一周的时间实现了这个想法"><a href="#（三）用一周的时间实现了这个想法" class="headerlink" title="（三）用一周的时间实现了这个想法"></a>（三）用一周的时间实现了这个想法</h2><p><strong>没错，就是一周，30个关卡，并自己设计制作了画面,点击下面的图片就可以玩</strong><br><a href="https://bobbygo.gitee.io"><img src="/img/logo.png" alt=""></a></p>
+<h2 id="（三）用一周的时间实现了这个想法"><a href="#（三）用一周的时间实现了这个想法" class="headerlink" title="（三）用一周的时间实现了这个想法"></a>（三）用一周的时间实现了这个想法</h2><p><strong>没错，就是一周，30个关卡，并自己设计制作了Tilemap地图,点击或扫描下面的二维码就可以畅玩</strong></p>
+<div align="center">
+<a href="https://www.duters-wu.cn/bobbygo">
+<img src="/img/bobbygo.png" width="30%" height="50%">
+<h3 style="margin-top: 5px;">bobbyGo益智游戏</h3>
+</a>
+</div>
+
 <h2 id="（四）就这样"><a href="#（四）就这样" class="headerlink" title="（四）就这样"></a>（四）就这样</h2>]]></content>
   </entry>
   <entry>
