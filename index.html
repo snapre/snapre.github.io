@@ -179,6 +179,65 @@
     
     
       <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2021/03/27/%E5%85%B3%E4%BA%8Eopencv%E6%89%93%E5%BC%80%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84rtsp%E8%A7%86%E9%A2%91%E6%B5%81%E5%9C%B0%E5%9D%80%E8%B6%85%E6%97%B6%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" target="_self">
+          <img src="/img/opencv.jpg" srcset="/img/loading.gif" alt="OpenCV打开不存在的RTSP视频流超时的解决方案">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/03/27/%E5%85%B3%E4%BA%8Eopencv%E6%89%93%E5%BC%80%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84rtsp%E8%A7%86%E9%A2%91%E6%B5%81%E5%9C%B0%E5%9D%80%E8%B6%85%E6%97%B6%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">OpenCV打开不存在的RTSP视频流超时的解决方案</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/03/27/%E5%85%B3%E4%BA%8Eopencv%E6%89%93%E5%BC%80%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84rtsp%E8%A7%86%E9%A2%91%E6%B5%81%E5%9C%B0%E5%9D%80%E8%B6%85%E6%97%B6%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+          
+          
+            
+          
+          
+在我们使用OpenCV计算机开源视觉库去处理视屏流(rtsp, rtmp…)时，我们发现如果去实例化一个不存在的RTSP视屏流地址，会发生超时的问题，而且这个实例化线程是原子阻塞的，无法强制退出，这在某些场景下是不能被接受的，所以我们必须采取一定的方案去限定cv2.VideoCapture(rtsp)实例化的时间，经过多番探索，我发现用自定义多线程和装饰器可以解决这个问题，代码如下：
+
+1234
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-03-27 15:14" pubdate>
+              2021-03-27
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/python/">python</a>
+            
+              <a href="/categories/python/opencv/">opencv</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/opencv-issue/">opencv-issue</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2021/03/12/%E6%A0%88%E7%9A%84%E9%80%92%E5%BD%92%E6%93%8D%E4%BD%9C/" target="_self">
           <img src="/img/java.jpeg" srcset="/img/loading.gif" alt="栈的递归操作">
         </a>
@@ -678,68 +737,6 @@ javap 命令用于解析类文件。其输出取决于所用的选项
               <a href="/tags/%E4%BD%9C%E4%B8%BA%E6%97%A5%E8%AE%B0%E5%8A%A0%E5%AF%86/">作为日记加密</a>
             
               <a href="/tags/%E6%95%B0%E5%80%BC%E4%BB%A3%E6%95%B0/">数值代数</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/12/26/optimization/" target="_self">
-          <img src="/img/math.jpeg" srcset="/img/loading.gif" alt="optimization">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2020/12/26/optimization/">optimization</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/12/26/optimization/">
-          
-          
-            
-          
-          methods of optimization作业 5. 设函数 $f:\mathbb{R}^n \to \mathbb{R}$ 连续二次可微，${x^k}$ 由某下降算法生成（即 $d^k$ 为下降方向），$\alpha_k$ 由Wolfe-Powell原则生成。已知 x^k \to x^*，并且 \nabla f(x^*)=0,\nabla^2f(x^*)\mathbb{>}0。令  
-
-\d
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-12-26 00:35" pubdate>
-              2020-12-26
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E8%AE%A1%E7%AE%97%E6%95%B0%E5%AD%A6/">计算数学</a>
-            
-              <a href="/categories/%E8%AE%A1%E7%AE%97%E6%95%B0%E5%AD%A6/%E8%BF%90%E7%AD%B9%E5%AD%A6/">运筹学</a>
-            
-              <a href="/categories/%E8%AE%A1%E7%AE%97%E6%95%B0%E5%AD%A6/%E8%BF%90%E7%AD%B9%E5%AD%A6/%E6%95%B0%E5%AD%A6/">数学</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/">优化算法</a>
-            
-              <a href="/tags/Hello/">Hello</a>
             
           </div>
         
