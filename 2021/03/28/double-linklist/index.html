@@ -1,0 +1,500 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="myblog">
+  <meta name="author" content="duters-wu">
+  <meta name="keywords" content="python nodejs rust">
+  <title>C++ double linked list demo - duters-wu</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/atom-one-dark-reasonable.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"duters-wu.gitee.io","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>bobbyGo</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="C++ double linked list demo">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-03-28 09:33" pubdate>
+        2021年3月28日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      24
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">C++ double linked list demo</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：几秒前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-comment">/* linkedlistdemo.cpp */</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;random&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><br><span class="hljs-comment">/* The console outputs color control */</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> RESET <span class="hljs-meta-string">&quot;\033[0m&quot;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> BLACK <span class="hljs-meta-string">&quot;\033[30m&quot;</span>              <span class="hljs-comment">/* Black */</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> RED <span class="hljs-meta-string">&quot;\033[31m&quot;</span>                <span class="hljs-comment">/* Red */</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> GREEN <span class="hljs-meta-string">&quot;\033[32m&quot;</span>              <span class="hljs-comment">/* Green */</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> YELLOW <span class="hljs-meta-string">&quot;\033[33m&quot;</span>             <span class="hljs-comment">/* Yellow */</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> BLUE <span class="hljs-meta-string">&quot;\033[34m&quot;</span>               <span class="hljs-comment">/* Blue */</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MAGENTA <span class="hljs-meta-string">&quot;\033[35m&quot;</span>            <span class="hljs-comment">/* Magenta */</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> CYAN <span class="hljs-meta-string">&quot;\033[36m&quot;</span>               <span class="hljs-comment">/* Cyan */</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> WHITE <span class="hljs-meta-string">&quot;\033[37m&quot;</span>              <span class="hljs-comment">/* White */</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> BOLDBLACK <span class="hljs-meta-string">&quot;\033[1m\033[30m&quot;</span>   <span class="hljs-comment">/* Bold Black */</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> BOLDRED <span class="hljs-meta-string">&quot;\033[1m\033[31m&quot;</span>     <span class="hljs-comment">/* Bold Red */</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> BOLDGREEN <span class="hljs-meta-string">&quot;\033[1m\033[32m&quot;</span>   <span class="hljs-comment">/* Bold Green */</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> BOLDYELLOW <span class="hljs-meta-string">&quot;\033[1m\033[33m&quot;</span>  <span class="hljs-comment">/* Bold Yellow */</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> BOLDBLUE <span class="hljs-meta-string">&quot;\033[1m\033[34m&quot;</span>    <span class="hljs-comment">/* Bold Blue */</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> BOLDMAGENTA <span class="hljs-meta-string">&quot;\033[1m\033[35m&quot;</span> <span class="hljs-comment">/* Bold Magenta */</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> BOLDCYAN <span class="hljs-meta-string">&quot;\033[1m\033[36m&quot;</span>    <span class="hljs-comment">/* Bold Cyan */</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> BOLDWHITE <span class="hljs-meta-string">&quot;\033[1m\033[37m&quot;</span>   <span class="hljs-comment">/* Bold White */</span></span><br><br><span class="hljs-comment">/* LinkedList Node */</span><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span></span><br><span class="hljs-class">&#123;</span><br><span class="hljs-keyword">private</span>:<br>    T data;<br>    Node&lt;T&gt; *prev;<br>    Node&lt;T&gt; *next;<br><br><span class="hljs-keyword">public</span>:<br>    Node(T data);<br>    ~Node();<br>    <span class="hljs-function">T <span class="hljs-title">get_data</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">set_data</span><span class="hljs-params">(T data)</span></span>;<br>    <span class="hljs-function">Node&lt;T&gt; *<span class="hljs-title">get_prev</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-function">Node&lt;T&gt; *<span class="hljs-title">get_next</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">set_prev</span><span class="hljs-params">(Node&lt;T&gt; *prev)</span></span>;<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">set_next</span><span class="hljs-params">(Node&lt;T&gt; *next)</span></span>;<br>    <span class="hljs-keyword">friend</span> ostream &amp;<span class="hljs-keyword">operator</span>&lt;&lt;(ostream &amp;output, Node&lt;T&gt; &amp;N)<br>    &#123;<br>        output &lt;&lt; <span class="hljs-string">&quot;&#123; *prev: &quot;</span> &lt;&lt; N.get_prev() &lt;&lt; <span class="hljs-string">&quot;, data: &quot;</span> &lt;&lt; N.get_data() &lt;&lt; <span class="hljs-string">&quot;, *next: &quot;</span> &lt;&lt; N.get_next() &lt;&lt; <span class="hljs-string">&quot; &#125;&quot;</span>;<br>        <span class="hljs-keyword">return</span> output;<br>    &#125;<br>&#125;;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br>Node&lt;T&gt;::Node(T data)<br>&#123;<br>    <span class="hljs-keyword">this</span>-&gt;data = data;<br>    prev = <span class="hljs-literal">NULL</span>;<br>    next = <span class="hljs-literal">NULL</span>;<br>&#125;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br>Node&lt;T&gt;::~Node()<br>&#123;<br>&#125;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br>T Node&lt;T&gt;::get_data()<br>&#123;<br>    <span class="hljs-keyword">return</span> data;<br>&#125;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-keyword">void</span> Node&lt;T&gt;::set_data(T data)<br>&#123;<br>    <span class="hljs-keyword">this</span>-&gt;data = data;<br>&#125;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br>Node&lt;T&gt; *Node&lt;T&gt;::get_prev()<br>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>-&gt;prev;<br>&#125;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br>Node&lt;T&gt; *Node&lt;T&gt;::get_next()<br>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>-&gt;next;<br>&#125;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-keyword">void</span> Node&lt;T&gt;::set_prev(Node&lt;T&gt; *prev)<br>&#123;<br>    <span class="hljs-keyword">this</span>-&gt;prev = prev;<br>&#125;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-keyword">void</span> Node&lt;T&gt;::set_next(Node&lt;T&gt; *next)<br>&#123;<br>    <span class="hljs-keyword">this</span>-&gt;next = next;<br>&#125;<br><br><span class="hljs-comment">/* LinkedList By Node&lt;T&gt; */</span><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LinkedList</span></span><br><span class="hljs-class">&#123;</span><br><span class="hljs-keyword">private</span>:<br>    Node&lt;T&gt; *head;<br>    Node&lt;T&gt; *tail;<br>    <span class="hljs-keyword">int</span> length;<br><br><span class="hljs-keyword">public</span>:<br>    LinkedList();<br>    ~LinkedList();<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">add_front</span><span class="hljs-params">(T data)</span></span>;<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">add_back</span><span class="hljs-params">(T data)</span></span>;<br>    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">size</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">is_empty</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-function">T <span class="hljs-title">remove_front</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-function">T <span class="hljs-title">remove_back</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">front_to_back</span><span class="hljs-params">()</span></span>;<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">back_to_front</span><span class="hljs-params">()</span></span>;<br>&#125;;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br>LinkedList&lt;T&gt;::LinkedList()<br>&#123;<br>    <span class="hljs-keyword">this</span>-&gt;head = <span class="hljs-literal">NULL</span>;<br>    <span class="hljs-keyword">this</span>-&gt;tail = <span class="hljs-literal">NULL</span>;<br>    <span class="hljs-keyword">this</span>-&gt;length = <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br>LinkedList&lt;T&gt;::~LinkedList()<br>&#123;<br>    Node&lt;T&gt; *cur;<br>    <span class="hljs-keyword">while</span> (head)<br>    &#123;<br>        cur = head-&gt;get_next();<br>        <span class="hljs-built_in">free</span>(head);<br>        head = cur;<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-keyword">void</span> LinkedList&lt;T&gt;::add_front(T data)<br>&#123;<br>    Node&lt;T&gt; *new_node = <span class="hljs-keyword">new</span> Node&lt;T&gt;(data);<br>    <span class="hljs-keyword">if</span> (tail == <span class="hljs-literal">NULL</span>)<br>    &#123;<br>        tail = new_node;<br>    &#125;<br>    <span class="hljs-keyword">else</span><br>    &#123;<br>        new_node-&gt;set_prev(<span class="hljs-literal">NULL</span>);<br>        head-&gt;set_prev(new_node);<br>        new_node-&gt;set_next(head);<br>    &#125;<br>    head = new_node;<br>    length++;<br>&#125;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-keyword">void</span> LinkedList&lt;T&gt;::add_back(T data)<br>&#123;<br>    Node&lt;T&gt; *new_node = <span class="hljs-keyword">new</span> Node&lt;T&gt;(data);<br>    <span class="hljs-keyword">if</span> (head == <span class="hljs-literal">NULL</span>)<br>    &#123;<br>        head = new_node;<br>    &#125;<br>    <span class="hljs-keyword">else</span><br>    &#123;<br>        new_node-&gt;set_next(<span class="hljs-literal">NULL</span>);<br>        new_node-&gt;set_prev(tail);<br>        tail-&gt;set_next(new_node);<br>    &#125;<br>    tail = new_node;<br>    length++;<br>&#125;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-keyword">int</span> LinkedList&lt;T&gt;::size()<br>&#123;<br>    <span class="hljs-keyword">return</span> length;<br>&#125;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-keyword">bool</span> LinkedList&lt;T&gt;::is_empty()<br>&#123;<br>    <span class="hljs-keyword">return</span> head == <span class="hljs-literal">NULL</span> ? <span class="hljs-literal">true</span> : <span class="hljs-literal">false</span>;<br>&#125;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br>T LinkedList&lt;T&gt;::remove_front()<br>&#123;<br>    Node&lt;T&gt; *cur = head;<br>    T data = cur-&gt;get_data();<br>    head = head-&gt;get_next();<br>    <span class="hljs-built_in">free</span>(cur);<br>    head-&gt;set_prev(<span class="hljs-literal">NULL</span>);<br>    length--;<br>    <span class="hljs-keyword">return</span> data;<br>&#125;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br>T LinkedList&lt;T&gt;::remove_back()<br>&#123;<br>    Node&lt;T&gt; *cur = tail;<br>    T data = cur-&gt;get_data();<br>    tail = cur-&gt;get_prev();<br>    <span class="hljs-built_in">free</span>(cur);<br>    tail-&gt;set_next(<span class="hljs-literal">NULL</span>);<br>    length--;<br>    <span class="hljs-keyword">return</span> data;<br>&#125;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-keyword">void</span> LinkedList&lt;T&gt;::front_to_back()<br>&#123;<br>    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;[&quot;</span>;<br>    Node&lt;T&gt; *cur = head;<br>    <span class="hljs-keyword">while</span> (cur != <span class="hljs-literal">NULL</span>)<br>    &#123;<br>        <span class="hljs-built_in">cout</span> &lt;&lt; *cur &lt;&lt; RED &lt;&lt; <span class="hljs-string">&quot; &lt;===&gt; &quot;</span> &lt;&lt; RESET;<br>        cur = cur-&gt;get_next();<br>    &#125;<br>    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot; NULL]\n\n&quot;</span>;<br>&#125;<br><br><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;<br><span class="hljs-keyword">void</span> LinkedList&lt;T&gt;::back_to_front()<br>&#123;<br>    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;[&quot;</span>;<br>    Node&lt;T&gt; *cur = tail;<br>    <span class="hljs-keyword">while</span> (cur != <span class="hljs-literal">NULL</span>)<br>    &#123;<br>        <span class="hljs-built_in">cout</span> &lt;&lt; *cur &lt;&lt; RED &lt;&lt; <span class="hljs-string">&quot; &lt;===&gt; &quot;</span> &lt;&lt; RESET;<br>        cur = cur-&gt;get_prev();<br>    &#125;<br>    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot; NULL]\n\n&quot;</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Hello World !&quot;</span> &lt;&lt; <span class="hljs-built_in">endl</span>;<br><br>    <span class="hljs-comment">// LinkedList by self !</span><br>    LinkedList&lt;<span class="hljs-keyword">int</span>&gt; linklist = LinkedList&lt;<span class="hljs-keyword">int</span>&gt;();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++)<br>    &#123;<br>        linklist.add_back(i * i);<br>    &#125;<br>    <span class="hljs-built_in">cout</span> &lt;&lt; linklist.size() &lt;&lt; <span class="hljs-built_in">endl</span>;<br>    <span class="hljs-built_in">cout</span> &lt;&lt; linklist.is_empty() &lt;&lt; <span class="hljs-built_in">endl</span>;<br>    linklist.front_to_back();<br>    linklist.back_to_front();<br>    <span class="hljs-built_in">cout</span> &lt;&lt; linklist.remove_back() &lt;&lt; <span class="hljs-built_in">endl</span>;<br>    <span class="hljs-built_in">cout</span> &lt;&lt; linklist.remove_front() &lt;&lt; <span class="hljs-built_in">endl</span>;<br>    linklist.front_to_back();<br>    linklist.add_front(<span class="hljs-number">100</span>);<br>    linklist.front_to_back();<br>    <span class="hljs-built_in">cout</span> &lt;&lt; linklist.size() &lt;&lt; <span class="hljs-built_in">endl</span>;<br><br>    <span class="hljs-comment">// vector by STL</span><br>    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; vt;<br>    default_random_engine e;<br>    <span class="hljs-function">uniform_int_distribution&lt;<span class="hljs-keyword">unsigned</span>&gt; <span class="hljs-title">u</span><span class="hljs-params">(<span class="hljs-number">0</span>, <span class="hljs-number">100</span>)</span></span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++)<br>    &#123;<br>        vt.push_back(u(e));<br>    &#125;<br>    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;::iterator v_pointer = vt.begin();<br>    <span class="hljs-keyword">while</span> (v_pointer != vt.end())<br>    &#123;<br>        <span class="hljs-built_in">cout</span> &lt;&lt; *v_pointer &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;<br>        v_pointer++;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> g++ linkedlistdemo.cpp</span><br><span class="hljs-meta">$</span><span class="bash"> ./a.exe</span><br>[&#123; *prev: 0, data: 0, *next: 0xf09868 &#125; &lt;===&gt; &#123; *prev: 0xf09fc0, data: 1, *next: 0xf09880 &#125; &lt;===&gt; &#123; *prev: 0xf09868, data: 4, *next: 0xf09898 &#125; &lt;<br>===&gt; &#123; *prev: 0xf09880, data: 9, *next: 0xf098b0 &#125; &lt;===&gt; &#123; *prev: 0xf09898, data: 16, *next: 0xf098c8 &#125; &lt;===&gt; &#123; *prev: 0xf098b0, data: 25, *next: <br>0xf098e0 &#125; &lt;===&gt; &#123; *prev: 0xf098c8, data: 36, *next: 0xf098f8 &#125; &lt;===&gt; &#123; *prev: 0xf098e0, data: 49, *next: 0xf09910 &#125; &lt;===&gt; &#123; *prev: 0xf098f8,<br> data: 64, *next: 0xf09928 &#125; &lt;===&gt; &#123; *prev: 0xf09910, data: 81, *next: 0 &#125; &lt;===&gt;  NULL]<br><br>[&#123; *prev: 0, data: 100, *next: 0xf09868 &#125; &lt;===&gt; &#123; *prev: 0xf09fc0, data: 1, *next: 0xf09880 &#125; &lt;===&gt; &#123; *prev: 0xf09868, data: 4, *next: 0xf09898 &#125;<br> &lt;===&gt; &#123; *prev: 0xf09880, data: 9, *next: 0xf098b0 &#125; &lt;===&gt; &#123; *prev: 0xf09898, data: 16, *next: 0xf098c8 &#125; &lt;===&gt; &#123; *prev: 0xf098b0, data: 25, *next<br>: 0xf098e0 &#125; &lt;===&gt; &#123; *prev: 0xf098c8, data: 36, *next: 0xf098f8 &#125; &lt;===&gt; &#123; *prev: 0xf098e0, data: 49, *next: 0xf09910 &#125; &lt;===&gt; &#123; *prev: 0xf098f<br>8, data: 64, *next: 0 &#125; &lt;===&gt;  NULL]<br></code></pre></div></td></tr></table></figure>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/C/">C++</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/C/">C++</a>
+                    
+                      <a class="hover-with-bg" href="/tags/LinkedList/">LinkedList</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/03/27/%E5%85%B3%E4%BA%8Eopencv%E6%89%93%E5%BC%80%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84rtsp%E8%A7%86%E9%A2%91%E6%B5%81%E5%9C%B0%E5%9D%80%E8%B6%85%E6%97%B6%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+                        <span class="hidden-mobile">OpenCV打开不存在的RTSP视频流超时的解决方案</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+  <!-- 备案信息 -->
+  <div class="beian">
+    <span>
+      <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+        陇ICP备19001924号-1
+      </a>
+    </span>
+    
+      
+        <span>
+          <a
+            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=62042102000012"
+            rel="nofollow noopener"
+            class="beian-police"
+            target="_blank"
+          >
+            
+              <span style="visibility: hidden; width: 0">|</span>
+              <img src="/img/police_beian.png" srcset="/img/loading.gif" alt="police-icon"/>
+            
+            <span>陇公安网备 62042102000012号</span>
+          </a>
+        </span>
+      
+    
+  </div>
+
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
