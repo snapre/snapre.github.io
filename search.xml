@@ -137,6 +137,26 @@
       </tags>
   </entry>
   <entry>
+    <title>optimization</title>
+    <url>/2020/12/26/optimization/</url>
+    <content><![CDATA[<h1 id="methods-of-optimization"><a href="#methods-of-optimization" class="headerlink" title="methods of optimization"></a>methods of optimization</h1><p><strong>作业 5.</strong> 设函数 $f:\mathbb{R}^n \to \mathbb{R}$ 连续二次可微，${x^k}$ 由某下降算法生成（即 $d^k$ 为下降方向），$\alpha_k$ 由Wolfe-Powell原则生成。已知 <script type="math/tex">x^k \to x^*</script>，并且 <script type="math/tex">\nabla f(x^*)=0,\nabla^2f(x^*)\mathbb{>}0</script>。令  </p>
+<script type="math/tex; mode=display">
+\delta_k := \frac{\Vert\nabla f(x^k)+\nabla^2f(x^k)d^k\Vert}{\Vert d^k \Vert}</script><p>如果 $\delta_k \to 0$，证明下述结论成立：<br>$\space$（1）当 $k$ 充分大时，必有步长 $\alpha_k=1;$<br>$\space$（2）序列 ${x^k}$ 超线性收敛。</p>
+<blockquote>
+<p>解答：（1）</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>计算数学</category>
+        <category>运筹学</category>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>优化算法</tag>
+        <tag>Hello</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java多线程</title>
     <url>/2021/02/05/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
     <content><![CDATA[<p><img src="/img/code.png" alt=""></p>
@@ -146,6 +166,17 @@
       </categories>
       <tags>
         <tag>Java多线程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>出走半生，归来仍是菜鸟</title>
+    <url>/2021/01/23/runoob/</url>
+    <content><![CDATA[<h2 id="燕雀安知鸿鹄之志，鸿鹄安知菜鸟之志"><a href="#燕雀安知鸿鹄之志，鸿鹄安知菜鸟之志" class="headerlink" title="燕雀安知鸿鹄之志，鸿鹄安知菜鸟之志"></a>燕雀安知鸿鹄之志，鸿鹄安知菜鸟之志</h2><h4 id="https-www-runoob-com"><a href="#https-www-runoob-com" class="headerlink" title="https://www.runoob.com/"></a><a href="https://www.runoob.com/">https://www.runoob.com/</a></h4>]]></content>
+      <categories>
+        <category>learn</category>
+      </categories>
+      <tags>
+        <tag>runoob</tag>
       </tags>
   </entry>
   <entry>
@@ -169,37 +200,6 @@
       </tags>
   </entry>
   <entry>
-    <title>optimization</title>
-    <url>/2020/12/26/optimization/</url>
-    <content><![CDATA[<h1 id="methods-of-optimization"><a href="#methods-of-optimization" class="headerlink" title="methods of optimization"></a>methods of optimization</h1><p><strong>作业 5.</strong> 设函数 $f:\mathbb{R}^n \to \mathbb{R}$ 连续二次可微，${x^k}$ 由某下降算法生成（即 $d^k$ 为下降方向），$\alpha_k$ 由Wolfe-Powell原则生成。已知 <script type="math/tex">x^k \to x^*</script>，并且 <script type="math/tex">\nabla f(x^*)=0,\nabla^2f(x^*)\mathbb{>}0</script>。令  </p>
-<script type="math/tex; mode=display">
-\delta_k := \frac{\Vert\nabla f(x^k)+\nabla^2f(x^k)d^k\Vert}{\Vert d^k \Vert}</script><p>如果 $\delta_k \to 0$，证明下述结论成立：<br>$\space$（1）当 $k$ 充分大时，必有步长 $\alpha_k=1;$<br>$\space$（2）序列 ${x^k}$ 超线性收敛。</p>
-<blockquote>
-<p>解答：（1）</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>计算数学</category>
-        <category>运筹学</category>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>优化算法</tag>
-        <tag>Hello</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>出走半生，归来仍是菜鸟</title>
-    <url>/2021/01/23/runoob/</url>
-    <content><![CDATA[<h2 id="燕雀安知鸿鹄之志，鸿鹄安知菜鸟之志"><a href="#燕雀安知鸿鹄之志，鸿鹄安知菜鸟之志" class="headerlink" title="燕雀安知鸿鹄之志，鸿鹄安知菜鸟之志"></a>燕雀安知鸿鹄之志，鸿鹄安知菜鸟之志</h2><h4 id="https-www-runoob-com"><a href="#https-www-runoob-com" class="headerlink" title="https://www.runoob.com/"></a><a href="https://www.runoob.com/">https://www.runoob.com/</a></h4>]]></content>
-      <categories>
-        <category>learn</category>
-      </categories>
-      <tags>
-        <tag>runoob</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>全排列输出（主流语言递归实现）</title>
     <url>/2021/02/27/whole-arrangement/</url>
     <content><![CDATA[<blockquote>
@@ -214,18 +214,6 @@
       <tags>
         <tag>C</tag>
         <tag>Algorithm</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>栈的递归操作</title>
-    <url>/2021/03/12/%E6%A0%88%E7%9A%84%E9%80%92%E5%BD%92%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<p><img src="/img/q.png" alt="The problem"><br><figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">// App.java</span><br><span class="hljs-keyword">import</span> java.util.Random;<br><span class="hljs-keyword">import</span> java.util.Stack;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;Hello Stack !&quot;</span>);<br>        Stack&lt;Integer&gt; s = <span class="hljs-keyword">new</span> Stack&lt;Integer&gt;();<br>        <span class="hljs-keyword">int</span> threshold = <span class="hljs-number">55</span>;<br>        Random r = <span class="hljs-keyword">new</span> Random(); <span class="hljs-comment">// Create a new random number generator</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">10</span>; i++) &#123;<br>            s.push(r.nextInt(<span class="hljs-number">100</span>)); <span class="hljs-comment">// 100 is the upper bound on the random number</span><br>        &#125;<br>        System.out.println(<span class="hljs-string">&quot;threshold: &quot;</span> + threshold);<br>        System.out.println(<span class="hljs-string">&quot;stack: &quot;</span> + s.toString());<br><br>        <span class="hljs-keyword">int</span> removeCount = removeAll(s, threshold);<br>        System.out.println(<span class="hljs-string">&quot;remove count: &quot;</span> + removeCount);<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">removeAll</span><span class="hljs-params">(Stack&lt;Integer&gt; s, <span class="hljs-keyword">int</span> threshold)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> topData = s.pop();<br><br>        <span class="hljs-keyword">if</span> (s.isEmpty()) &#123;<br>            <span class="hljs-keyword">if</span> (topData &gt; threshold) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                s.push(topData);<br>                <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>            &#125;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">if</span> (topData &gt; threshold) &#123;<br>                <span class="hljs-keyword">return</span> removeAll(s, threshold) + <span class="hljs-number">1</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                count += removeAll(s, threshold);<br>                s.push(topData);<br>                System.out.println(s.toString());<br>                <span class="hljs-keyword">return</span> count;<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure><br><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">xiang@iMac MINGW64 ~/Desktop/mid2<br><span class="hljs-meta">$</span><span class="bash"> javac App.java</span><br><br>xiang@iMac MINGW64 ~/Desktop/mid2<br><span class="hljs-meta">$</span><span class="bash"> java App</span><br>Hello Stack !<br>threshold: 55<br>stack: [67, 64, 33, 13, 74, 72, 22, 22, 18, 72]<br>[33]<br>[33, 13]<br>[33, 13, 22]<br>[33, 13, 22, 22]<br>[33, 13, 22, 22, 18]<br>remove count: 5<br></code></pre></div></td></tr></table></figure></p>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -245,6 +233,18 @@
       </categories>
       <tags>
         <tag>opencv-issue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>栈的递归操作</title>
+    <url>/2021/03/12/%E6%A0%88%E7%9A%84%E9%80%92%E5%BD%92%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<p><img src="/img/q.png" alt="The problem"><br><figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">// App.java</span><br><span class="hljs-keyword">import</span> java.util.Random;<br><span class="hljs-keyword">import</span> java.util.Stack;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;Hello Stack !&quot;</span>);<br>        Stack&lt;Integer&gt; s = <span class="hljs-keyword">new</span> Stack&lt;Integer&gt;();<br>        <span class="hljs-keyword">int</span> threshold = <span class="hljs-number">55</span>;<br>        Random r = <span class="hljs-keyword">new</span> Random(); <span class="hljs-comment">// Create a new random number generator</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">10</span>; i++) &#123;<br>            s.push(r.nextInt(<span class="hljs-number">100</span>)); <span class="hljs-comment">// 100 is the upper bound on the random number</span><br>        &#125;<br>        System.out.println(<span class="hljs-string">&quot;threshold: &quot;</span> + threshold);<br>        System.out.println(<span class="hljs-string">&quot;stack: &quot;</span> + s.toString());<br><br>        <span class="hljs-keyword">int</span> removeCount = removeAll(s, threshold);<br>        System.out.println(<span class="hljs-string">&quot;remove count: &quot;</span> + removeCount);<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">removeAll</span><span class="hljs-params">(Stack&lt;Integer&gt; s, <span class="hljs-keyword">int</span> threshold)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> topData = s.pop();<br><br>        <span class="hljs-keyword">if</span> (s.isEmpty()) &#123;<br>            <span class="hljs-keyword">if</span> (topData &gt; threshold) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                s.push(topData);<br>                <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>            &#125;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">if</span> (topData &gt; threshold) &#123;<br>                <span class="hljs-keyword">return</span> removeAll(s, threshold) + <span class="hljs-number">1</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                count += removeAll(s, threshold);<br>                s.push(topData);<br>                System.out.println(s.toString());<br>                <span class="hljs-keyword">return</span> count;<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure><br><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">xiang@iMac MINGW64 ~/Desktop/mid2<br><span class="hljs-meta">$</span><span class="bash"> javac App.java</span><br><br>xiang@iMac MINGW64 ~/Desktop/mid2<br><span class="hljs-meta">$</span><span class="bash"> java App</span><br>Hello Stack !<br>threshold: 55<br>stack: [67, 64, 33, 13, 74, 72, 22, 22, 18, 72]<br>[33]<br>[33, 13]<br>[33, 13, 22]<br>[33, 13, 22, 22]<br>[33, 13, 22, 22, 18]<br>remove count: 5<br></code></pre></div></td></tr></table></figure></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java数据结构</tag>
       </tags>
   </entry>
 </search>
