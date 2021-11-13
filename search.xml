@@ -91,51 +91,6 @@
       </tags>
   </entry>
   <entry>
-    <title>git alias</title>
-    <url>/2021/11/13/git-alias/</url>
-    <content><![CDATA[<h1 id="git-alias"><a href="#git-alias" class="headerlink" title="git alias"></a>git alias</h1><blockquote>
-<p>Let you use git more efficiently </p>
-<p>add below config code to you .gitconfig file (~/.gitconfig)<br><figure class="highlight plain"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs git">[alias]<br>  st&#x3D;status<br>  ci&#x3D;commit<br>  cia&#x3D;commit --amend<br>  co&#x3D;checkout<br>  br&#x3D;branch<br>  cl&#x3D;clone<br>  lg1 &#x3D; log --graph --abbrev-commit --decorate --date&#x3D;relative --format&#x3D;format:&#39;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim bold blue)- %an%C(reset)%C(bold yellow)%d%C(reset)&#39; --all<br>  lg2 &#x3D; log --graph --abbrev-commit --decorate --format&#x3D;format:&#39;%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n&#39;&#39;          %C(white)%s%C(reset) %C(dim bold blue)- %an%C(reset)&#39; -10 --all<br>  lg &#x3D; !&quot;git lg1&quot;<br></code></pre></div></td></tr></table></figure></p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>git</tag>
-        <tag>alias</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>optimization</title>
-    <url>/2020/12/26/optimization/</url>
-    <content><![CDATA[<h1 id="methods-of-optimization"><a href="#methods-of-optimization" class="headerlink" title="methods of optimization"></a>methods of optimization</h1><p><strong>作业 5.</strong> 设函数 $f:\mathbb{R}^n \to \mathbb{R}$ 连续二次可微，${x^k}$ 由某下降算法生成（即 $d^k$ 为下降方向），$\alpha_k$ 由Wolfe-Powell原则生成。已知 <script type="math/tex">x^k \to x^*</script>，并且 <script type="math/tex">\nabla f(x^*)=0,\nabla^2f(x^*)\mathbb{>}0</script>。令  </p>
-<script type="math/tex; mode=display">
-\delta_k := \frac{\Vert\nabla f(x^k)+\nabla^2f(x^k)d^k\Vert}{\Vert d^k \Vert}</script><p>如果 $\delta_k \to 0$，证明下述结论成立：<br>$\space$（1）当 $k$ 充分大时，必有步长 $\alpha_k=1;$<br>$\space$（2）序列 ${x^k}$ 超线性收敛。</p>
-<blockquote>
-<p>解答：（1）</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>计算数学</category>
-        <category>运筹学</category>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>优化算法</tag>
-        <tag>Hello</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java多线程</title>
-    <url>/2021/02/05/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
-    <content><![CDATA[<p><img src="/img/code.png" alt=""></p>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java多线程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2020/12/17/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -148,6 +103,19 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></div></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>git alias</title>
+    <url>/2021/11/13/git-alias/</url>
+    <content><![CDATA[<h1 id="git-alias"><a href="#git-alias" class="headerlink" title="git alias"></a>git alias</h1><blockquote>
+<p>Let you use git more efficiently </p>
+<p>add below config code to you .gitconfig file (~/.gitconfig)<br><figure class="highlight plain"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs git">[alias]<br>  st&#x3D;status<br>  ci&#x3D;commit<br>  cia&#x3D;commit --amend<br>  co&#x3D;checkout<br>  br&#x3D;branch<br>  cl&#x3D;clone<br>  lg1 &#x3D; log --graph --abbrev-commit --decorate --date&#x3D;relative --format&#x3D;format:&#39;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim bold blue)- %an%C(reset)%C(bold yellow)%d%C(reset)&#39; --all<br>  lg2 &#x3D; log --graph --abbrev-commit --decorate --format&#x3D;format:&#39;%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n&#39;&#39;          %C(white)%s%C(reset) %C(dim bold blue)- %an%C(reset)&#39; -10 --all<br>  lg &#x3D; !&quot;git lg1&quot;<br></code></pre></div></td></tr></table></figure></p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>git</tag>
+        <tag>alias</tag>
+      </tags>
   </entry>
   <entry>
     <title>How to use javap?</title>
@@ -179,6 +147,38 @@
       </categories>
       <tags>
         <tag>Java Tools</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java多线程</title>
+    <url>/2021/02/05/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
+    <content><![CDATA[<p><img src="/img/code.png" alt=""></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java多线程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>optimization</title>
+    <url>/2020/12/26/optimization/</url>
+    <content><![CDATA[<h1 id="methods-of-optimization"><a href="#methods-of-optimization" class="headerlink" title="methods of optimization"></a>methods of optimization</h1><p><strong>作业 5.</strong> 设函数 $f:\mathbb{R}^n \to \mathbb{R}$ 连续二次可微，${x^k}$ 由某下降算法生成（即 $d^k$ 为下降方向），$\alpha_k$ 由Wolfe-Powell原则生成。已知 <script type="math/tex">x^k \to x^*</script>，并且 <script type="math/tex">\nabla f(x^*)=0,\nabla^2f(x^*)\mathbb{>}0</script>。令  </p>
+<script type="math/tex; mode=display">
+\delta_k := \frac{\Vert\nabla f(x^k)+\nabla^2f(x^k)d^k\Vert}{\Vert d^k \Vert}</script><p>如果 $\delta_k \to 0$，证明下述结论成立：<br>$\space$（1）当 $k$ 充分大时，必有步长 $\alpha_k=1;$<br>$\space$（2）序列 ${x^k}$ 超线性收敛。</p>
+<blockquote>
+<p>解答：（1）</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>计算数学</category>
+        <category>运筹学</category>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>优化算法</tag>
+        <tag>Hello</tag>
       </tags>
   </entry>
   <entry>
