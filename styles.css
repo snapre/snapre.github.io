@@ -780,8 +780,9 @@ h1 {
 
 @media (max-width: 620px) {
   h1 {
-    font-size: 1.06rem;
-    white-space: nowrap;
+    font-size: clamp(1.02rem, 4.6vw, 1.24rem);
+    line-height: 1.2;
+    white-space: normal;
   }
 
   .hero__copy {
@@ -801,7 +802,7 @@ h1 {
 
   .cockpit {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr)) 1.05fr 1.15fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 5px;
     margin-top: 7px;
   }
@@ -814,16 +815,21 @@ h1 {
 
   .stat {
     min-width: 0;
-    padding: 4px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    padding: 4px 7px;
   }
 
   .stat span {
-    display: none;
+    display: block;
+    font-size: 0.75rem;
   }
 
   .stat strong {
     margin-top: 0;
-    font-size: 0.78rem;
+    font-size: 0.82rem;
   }
 
   .drive-button {
