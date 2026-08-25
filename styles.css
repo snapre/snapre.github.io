@@ -131,10 +131,19 @@ button {
   margin: 0 auto;
 }
 
+.hero-row {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 64px;
+  align-items: center;
+  margin-bottom: 52px;
+  padding: 0 20px;
+}
+
 .basic-info {
   position: relative;
-  margin-bottom: 48px;
-  padding: 0 20px;
+  margin-bottom: 0;
+  padding: 0;
   overflow: hidden;
 }
 
@@ -254,7 +263,7 @@ button {
 .intro {
   position: relative;
   min-height: 0;
-  padding: 0 20px 52px;
+  padding: 0;
   color: #603b20;
   font-size: 18px;
   font-weight: 400;
@@ -426,12 +435,16 @@ button {
   }
 
   .basic-info {
-    margin-bottom: 44px;
+    margin-bottom: 0;
     padding: 0;
   }
 
-  .intro {
-    padding: 0 0 48px;
+  .hero-row {
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 24px;
+    align-items: center;
+    margin-bottom: 48px;
+    padding: 0;
   }
 
   .section-title {
