@@ -121,22 +121,19 @@ button {
   display: flex;
   flex-flow: wrap;
   max-width: 1420px;
-  margin: 80px auto;
+  margin: 56px auto;
   padding: 0 80px;
 }
 
-.content-left {
-  flex: 0 0 30%;
-}
-
-.content-right {
-  flex: 1 0 70%;
-  max-width: 70%;
+.content-main {
+  width: 70%;
+  max-width: 840px;
+  margin: 0 auto;
 }
 
 .basic-info {
   position: relative;
-  margin-bottom: 80px;
+  margin-bottom: 48px;
   padding: 0 20px;
   overflow: hidden;
 }
@@ -172,14 +169,6 @@ button {
   word-break: break-all;
 }
 
-.profile-link {
-  font-family: "Avenir LT Std";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1;
-  opacity: 0.5;
-}
-
 .job {
   color: rgb(125, 125, 125);
   font-family: "Avenir LT Std";
@@ -187,12 +176,12 @@ button {
   opacity: 0.8;
 }
 
-.left-section {
-  margin-bottom: 68px;
+.right-section {
+  margin-bottom: 44px;
 }
 
-.right-section {
-  margin-bottom: 70px;
+.contact-section {
+  margin-bottom: 0;
 }
 
 .section-title {
@@ -213,7 +202,7 @@ button {
 }
 
 .section-title.desktop {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .section-title.desktop .title-cn {
@@ -264,21 +253,21 @@ button {
 
 .intro {
   position: relative;
-  min-height: 305px;
-  padding: 0 20px 150px;
+  min-height: 0;
+  padding: 0 20px 52px;
   color: #603b20;
-  font-size: 42px;
-  font-weight: 600;
-  line-height: 55px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
 }
 
 .intro .bio {
-  font-weight: 600;
+  font-weight: 400;
   overflow-wrap: break-word;
 }
 
 .vertical-wrapper {
-  margin-bottom: 30px;
+  margin-bottom: 16px;
   overflow: hidden;
 }
 
@@ -420,15 +409,53 @@ button {
 }
 
 @media screen and (max-width: 998px) {
-  .content-left,
-  .content-right {
-    max-width: 100%;
-    flex: 0 0 100%;
+  .content-main {
+    width: 100%;
+    max-width: 720px;
   }
 }
 
 @media screen and (max-width: 500px) {
   :root {
     --vw: 1vw;
+  }
+
+  .contents {
+    margin: 32px auto;
+    padding: 0 24px;
+  }
+
+  .basic-info {
+    margin-bottom: 44px;
+    padding: 0;
+  }
+
+  .intro {
+    padding: 0 0 48px;
+  }
+
+  .section-title {
+    margin-left: 0;
+  }
+
+  .vertical-wrapper .inner,
+  .avatar-list {
+    padding: 0;
+  }
+
+  .right-section {
+    margin-bottom: 40px;
+  }
+
+  .work-item.desktop {
+    width: 100%;
+  }
+
+  .work-item.desktop .work-copy {
+    padding-right: 0;
+  }
+
+  .contact-section {
+    margin-bottom: 16px;
   }
 }
