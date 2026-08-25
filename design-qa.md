@@ -9,12 +9,13 @@
 - Change the three-line founder introduction to normal body text.
 - Tighten the overall desktop and H5 layout.
 - Place the profile block and founder introduction in one left-right row.
+- Use a full-viewport Gaussian blur of the avatar as the page background.
 
 ## Evidence
 
-- Desktop implementation: `design-evidence/implementation-hero-row-desktop.jpg`
-- H5 implementation: `design-evidence/implementation-hero-row-mobile.jpg`
-- H5 bottom/contact state: `design-evidence/implementation-single-column-mobile-bottom.jpg`
+- Desktop implementation: `design-evidence/implementation-full-blur-desktop.jpg`
+- H5 implementation: `design-evidence/implementation-full-blur-mobile.jpg`
+- H5 bottom/contact state: `design-evidence/implementation-full-blur-mobile-bottom.jpg`
 - Desktop viewport: 1280 × 720 CSS px.
 - H5 viewport: 390 × 844 CSS px.
 
@@ -24,6 +25,8 @@
 - The top hero is a single grid row: profile on the left and introduction on the right.
 - Desktop hero columns are 220 px + remaining width with a 64 px gap.
 - H5 hero columns are 96 px + remaining width with a 24 px gap.
+- The avatar background is fixed to the viewport, covers 124vw × 124vh, uses `blur(120px) saturate(1.05)`, and has no exposed edges while scrolling.
+- A translucent white overlay preserves text contrast without hiding the avatar-derived color field.
 - `友情链接` and `jike.city/snapre` are absent from rendered text and links.
 - Content order is profile → introduction → social → works → contact.
 - Introduction computed type is `18px / 30px / 400`.
