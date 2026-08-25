@@ -3,201 +3,190 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#f7f4ef" />
+    <meta name="theme-color" content="#ffffff" />
     <meta
       name="description"
       content="王子安，Srome 创始人 & CTO、AI Native Builder、deploy.bar 作者。"
     />
-    <meta property="og:title" content="王子安 · snapre" />
+    <meta property="og:title" content="王子安 - Yellow Page" />
     <meta
       property="og:description"
       content="Srome 创始人 & CTO · AI Native Builder · deploy.bar 作者"
     />
     <meta property="og:image" content="./assets/profile/avatar.png" />
-    <title>王子安 · snapre</title>
+    <title>王子安 - Yellow Page</title>
     <link rel="icon" type="image/png" href="./assets/profile/avatar.png" />
     <link rel="apple-touch-icon" href="./assets/profile/avatar.png" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main-content">跳到主要内容</a>
+    <main class="namecard">
+      <div class="blur-holder" aria-hidden="true">
+        <img class="blur-image" src="./assets/profile/avatar.png" alt="" />
+      </div>
 
-    <div class="ambient" aria-hidden="true">
-      <img src="./assets/profile/avatar.png" alt="" />
-    </div>
-
-    <main class="page-shell" id="main-content">
-      <aside class="identity-column" aria-label="个人资料">
-        <section class="profile reveal" style="--delay: 40ms">
-          <img class="avatar" src="./assets/profile/avatar.png" alt="王子安的头像" width="1254" height="1254" />
-          <div class="profile-copy">
-            <h2>王子安</h2>
-            <a class="profile-link" href="https://jike.city/snapre" target="_blank" rel="noreferrer">
-              jike.city/snapre
-            </a>
-            <p class="status"><span aria-hidden="true"></span>创业中</p>
-          </div>
-        </section>
-
-        <div class="side-sections">
-          <section class="side-section reveal" style="--delay: 120ms" aria-labelledby="friends-title">
-            <header class="section-label" id="friends-title">
-              <span>友情链接</span>
-              <small>ALSO LINK TO</small>
-            </header>
-            <a
-              class="round-link friend-link"
-              href="https://jike.city/liaopei"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="远子的诗"
-              title="远子的诗"
-            >
-              <img src="./assets/profile/friend-liaopei.jpg" alt="远子的诗" width="120" height="120" />
-            </a>
+      <div class="contents">
+        <div class="content-block content-left">
+          <section class="basic-info" aria-label="个人资料">
+            <div class="profile-head">
+              <img
+                class="avatar"
+                src="./assets/profile/avatar.png"
+                alt="王子安的头像"
+                width="1254"
+                height="1254"
+              />
+              <div class="profile-copy">
+                <div class="screen-name">王子安</div>
+                <a class="profile-link" href="https://jike.city/snapre" target="_blank" rel="noreferrer">
+                  jike.city/snapre
+                </a>
+              </div>
+            </div>
+            <div class="job">创业中</div>
           </section>
 
-          <section class="side-section reveal" style="--delay: 200ms" aria-labelledby="contact-title">
-            <header class="section-label" id="contact-title">
-              <span>联系我</span>
-              <small>CONTACT ME</small>
+          <section class="left-section" aria-labelledby="friend-title">
+            <header class="section-title desktop" id="friend-title">
+              <div class="title-cn">友情链接</div>
+              <div class="title-en">ALSO LINK TO</div>
             </header>
-            <div class="icon-row">
+            <div class="avatar-list desktop">
               <a
-                class="round-link"
-                href="mailto:hello@snapre.fun"
-                aria-label="发送邮件到 hello@snapre.fun"
-                title="hello@snapre.fun"
+                class="round-item"
+                href="https://jike.city/liaopei"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="廖培的页面"
               >
-                <img src="./assets/profile/contact-email.png" alt="" width="80" height="80" />
+                <img src="./assets/profile/friend-liaopei.jpg" alt="廖培" />
+              </a>
+            </div>
+          </section>
+
+          <section class="left-section" aria-labelledby="contact-title">
+            <header class="section-title desktop" id="contact-title">
+              <div class="title-cn">联系我</div>
+              <div class="title-en">CONTACT ME</div>
+            </header>
+            <div class="avatar-list desktop">
+              <a class="round-item" href="mailto:hello@snapre.fun" aria-label="发送电子邮件">
+                <img src="./assets/profile/contact-email.png" alt="电子邮件" />
               </a>
               <button
-                class="round-link copy-button"
+                class="round-item"
                 type="button"
                 data-copy="snapre"
-                data-message="微信号 snapre 已复制"
+                data-message="已复制"
                 aria-label="复制微信号 snapre"
-                title="微信：snapre"
               >
-                <img src="./assets/profile/contact-wechat.png" alt="" width="80" height="80" />
+                <img src="./assets/profile/contact-wechat.png" alt="微信" />
               </button>
             </div>
           </section>
         </div>
-      </aside>
 
-      <div class="content-column">
-        <header class="intro reveal" style="--delay: 80ms">
-          <p>Srome 创始人 &amp; CTO</p>
-          <p>AI Native Builder</p>
-          <p>deploy.bar 作者</p>
-        </header>
+        <div class="content-block content-right">
+          <section class="intro" aria-label="个人简介">
+            <div class="bio">
+              <span>Srome 创始人 &amp; CTO</span><br />
+              <span>AI Native Builder</span><br />
+              <span>deploy.bar 作者</span>
+            </div>
+          </section>
 
-        <section class="content-section reveal" style="--delay: 160ms" aria-labelledby="social-title">
-          <header class="section-label" id="social-title">
-            <span>社交媒体</span>
-            <small>SOCIAL MEDIA</small>
-          </header>
-          <nav class="social-grid" aria-label="社交媒体链接">
-            <a class="social-link" href="https://x.com/_snapre" target="_blank" rel="noreferrer" aria-label="X" title="X">
-              <img src="./assets/profile/social-x.png" alt="" width="120" height="120" />
-            </a>
-            <a
-              class="social-link"
-              href="https://www.instagram.com/snapre.wx?igsi=MThhdzN6NnJ4cWljNg%3D%3D&amp;utm_source=qr"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Instagram"
-              title="Instagram"
-            >
-              <img src="./assets/profile/social-instagram.png" alt="" width="126" height="126" />
-            </a>
-            <a
-              class="social-link"
-              href="https://github.com/snapre"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="GitHub"
-              title="GitHub"
-            >
-              <img src="./assets/profile/social-github.png" alt="" width="120" height="120" />
-            </a>
-            <a
-              class="social-link"
-              href="https://m.okjike.com/users/c56f6ef9-abe1-439e-ba55-352e63e44169"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="即刻"
-              title="即刻"
-            >
-              <img src="./assets/profile/social-jike.png" alt="" width="120" height="120" />
-            </a>
-            <a
-              class="social-link"
-              href="https://xhslink.cn/o/5tsI2onVNAF"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="小红书"
-              title="小红书"
-            >
-              <img src="./assets/profile/social-xiaohongshu.png" alt="" width="120" height="120" />
-            </a>
-            <button
-              class="social-link copy-button"
-              type="button"
-              data-copy="易普 AI"
-              data-message="公众号「易普 AI」已复制"
-              aria-label="复制微信公众号 易普 AI"
-              title="微信公众号：易普 AI"
-            >
-              <img src="./assets/profile/social-wechat-official.png" alt="" width="120" height="120" />
-            </button>
-            <a
-              class="social-link"
-              href="https://weibo.com/snapre"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="微博"
-              title="微博"
-            >
-              <img src="./assets/profile/social-weibo.png" alt="" width="120" height="120" />
-            </a>
-          </nav>
-        </section>
+          <section class="right-section" aria-labelledby="social-title">
+            <header class="section-title desktop" id="social-title">
+              <div class="title-cn">社交媒体</div>
+              <div class="title-en">SOCIAL MEDIA</div>
+            </header>
+            <nav class="vertical-wrapper" aria-label="社交媒体链接">
+              <div class="social-list inner">
+              <a class="social-item desktop" href="https://x.com/_snapre" target="_blank" rel="noreferrer" aria-label="X">
+                <img src="./assets/profile/social-x.png" alt="X" />
+              </a>
+              <a
+                class="social-item desktop"
+                href="https://www.instagram.com/snapre.wx?igsi=MThhdzN6NnJ4cWljNg%3D%3D&amp;utm_source=qr"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+              >
+                <img src="./assets/profile/social-instagram.png" alt="Instagram" />
+              </a>
+              <a class="social-item desktop" href="https://github.com/snapre" target="_blank" rel="noreferrer" aria-label="GitHub">
+                <img src="./assets/profile/social-github.png" alt="GitHub" />
+              </a>
+              <a
+                class="social-item desktop"
+                href="https://m.okjike.com/users/c56f6ef9-abe1-439e-ba55-352e63e44169"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="即刻"
+              >
+                <img src="./assets/profile/social-jike.png" alt="即刻" />
+              </a>
+              <a class="social-item desktop" href="https://xhslink.cn/o/5tsI2onVNAF" target="_blank" rel="noreferrer" aria-label="小红书">
+                <img src="./assets/profile/social-xiaohongshu.png" alt="小红书" />
+              </a>
+              <button
+                class="social-item desktop"
+                type="button"
+                data-copy="易普 AI"
+                data-message="已复制"
+                aria-label="复制公众号名称 易普 AI"
+              >
+                <img src="./assets/profile/social-wechat-official.png" alt="微信公众号" />
+              </button>
+              <a class="social-item desktop" href="https://weibo.com/snapre" target="_blank" rel="noreferrer" aria-label="微博">
+                <img src="./assets/profile/social-weibo.png" alt="微博" />
+              </a>
+              </div>
+            </nav>
+          </section>
 
-        <section class="content-section works-section reveal" style="--delay: 240ms" aria-labelledby="works-title">
-          <header class="section-label" id="works-title">
-            <span>作品</span>
-            <small>MY WORKS</small>
-          </header>
-          <div class="works-grid">
-            <a class="work-card" href="https://srome.app" target="_blank" rel="noreferrer">
-              <img src="./assets/profile/work-srome.png" alt="Srome" width="1024" height="1024" />
-              <span class="work-copy">
-                <strong>Srome</strong>
-                <span>Srome 是一个由 AI 居民参与的私密社交网络。</span>
-              </span>
-            </a>
-            <a class="work-card" href="https://deploy.bar" target="_blank" rel="noreferrer">
-              <img src="./assets/profile/work-deploybar.png" alt="DeployBar" width="1024" height="1024" />
-              <span class="work-copy">
-                <strong>DeployBar</strong>
-                <span>一款免费开源的 macOS 菜单栏部署监控工具。</span>
-              </span>
-            </a>
-            <a class="work-card" href="https://g.snapre.fun" target="_blank" rel="noreferrer">
-              <img src="./assets/profile/work-bobby-carrot.png" alt="bobby carrot" width="256" height="256" />
-              <span class="work-copy">
-                <strong>bobby carrot</strong>
-                <span>一款游戏</span>
-              </span>
-            </a>
-          </div>
-        </section>
+          <section class="right-section" aria-labelledby="works-title">
+            <header class="section-title desktop" id="works-title">
+              <div class="title-cn">作品</div>
+              <div class="title-en">MY WORKS</div>
+            </header>
+            <div class="vertical-wrapper">
+              <div class="works-list inner">
+                <a class="work-item desktop" href="https://srome.app" target="_blank" rel="noreferrer">
+                  <span class="work-left">
+                    <img class="work-image" src="./assets/profile/work-srome.png" alt="Srome" />
+                  </span>
+                  <span class="work-copy">
+                    <span class="work-title">Srome</span>
+                    <span class="work-desc">Srome 是一个由 AI 居民参与的私密社交网络。</span>
+                  </span>
+                </a>
+                <a class="work-item desktop" href="https://deploy.bar" target="_blank" rel="noreferrer">
+                  <span class="work-left">
+                    <img class="work-image" src="./assets/profile/work-deploybar.png" alt="DeployBar" />
+                  </span>
+                  <span class="work-copy">
+                    <span class="work-title">DeployBar</span>
+                    <span class="work-desc">一款免费开源的 macOS 菜单栏部署监控工具。</span>
+                  </span>
+                </a>
+                <a class="work-item desktop" href="https://g.snapre.fun" target="_blank" rel="noreferrer">
+                  <span class="work-left">
+                    <img class="work-image" src="./assets/profile/work-bobby-carrot.png" alt="bobby carrot" />
+                  </span>
+                  <span class="work-copy">
+                    <span class="work-title">bobby carrot</span>
+                    <span class="work-desc">一款游戏</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </section>
+        </div>
       </div>
     </main>
 
-    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <div class="toast" id="toast" role="alert" aria-live="polite"></div>
     <script src="./script.js"></script>
   </body>
 </html>
