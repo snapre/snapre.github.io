@@ -342,7 +342,7 @@ button {
   height: 60px;
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 8px;
+  border-radius: 22%;
   object-fit: cover;
 }
 
@@ -387,7 +387,6 @@ button {
   height: 98px;
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 10px;
   object-fit: cover;
 }
 
@@ -425,6 +424,140 @@ button {
 
 .toast.is-visible {
   opacity: 1;
+}
+
+@media screen and (min-width: 999px) {
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .namecard {
+    position: fixed;
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .contents {
+    height: 100%;
+    margin: 0 auto;
+    padding-top: clamp(24px, 4vh, 36px);
+    padding-bottom: clamp(24px, 4vh, 36px);
+  }
+
+  .content-main {
+    width: 78%;
+    max-width: 960px;
+    margin: auto;
+  }
+
+  .hero-row {
+    margin-bottom: 32px;
+  }
+
+  .avatar {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 14px;
+  }
+
+  .profile-copy {
+    margin-bottom: 12px;
+  }
+
+  .right-section {
+    margin-bottom: 28px;
+  }
+
+  .section-title.desktop {
+    margin-bottom: 14px;
+  }
+
+  .vertical-wrapper {
+    margin-bottom: 0;
+  }
+
+  .social-item.desktop {
+    width: 46px;
+    height: 46px;
+    margin: 0 16px 0 0;
+    flex-basis: 46px;
+  }
+
+  .works-list.inner {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .work-item.desktop {
+    width: auto;
+    min-width: 0;
+    margin-bottom: 0;
+    padding-right: 0;
+  }
+
+  .work-item.desktop .work-image {
+    width: 84px;
+    height: 84px;
+  }
+
+  .work-item.desktop .work-copy {
+    padding-right: 0;
+  }
+
+  .work-item.desktop .work-title {
+    font-size: 18px;
+  }
+
+  .work-item.desktop .work-desc {
+    margin-top: 6px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .avatar-list.desktop .round-item {
+    width: 46px;
+    height: 46px;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 999px) and (max-height: 700px) {
+  .contents {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .hero-row {
+    margin-bottom: 24px;
+  }
+
+  .right-section {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 999px) and (max-width: 1100px) {
+  .work-left {
+    margin-right: 12px;
+  }
+
+  .work-item.desktop .work-image {
+    width: 72px;
+    height: 72px;
+  }
+
+  .work-item.desktop .work-title {
+    font-size: 16px;
+  }
+
+  .work-item.desktop .work-desc {
+    font-size: 13px;
+    line-height: 18px;
+  }
 }
 
 @media screen and (max-width: 998px) {
