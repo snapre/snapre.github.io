@@ -2,109 +2,202 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Model 3 · 21 天自驾环线</title>
-    <link rel="icon" type="image/svg+xml" href="./assets/tesla-t-logo.svg" />
-    <link rel="shortcut icon" href="./assets/tesla-t-logo.svg" />
-    <link rel="apple-touch-icon" href="./assets/tesla-t-logo.svg" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f7f4ef" />
+    <meta
+      name="description"
+      content="王子安，Srome 创始人 & CTO、AI Native Builder、deploy.bar 作者。"
+    />
+    <meta property="og:title" content="王子安 · snapre" />
+    <meta
+      property="og:description"
+      content="Srome 创始人 & CTO · AI Native Builder · deploy.bar 作者"
+    />
+    <meta property="og:image" content="./assets/profile/avatar.png" />
+    <title>王子安 · snapre</title>
+    <link rel="icon" type="image/png" href="./assets/profile/avatar.png" />
+    <link rel="apple-touch-icon" href="./assets/profile/avatar.png" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <main class="trip-shell">
-      <section class="hero" aria-label="21 天自驾路线互动地图">
-        <div class="hero__backdrop" aria-hidden="true"></div>
-        <div class="hero__copy">
-          <p class="kicker">7000+ KM · 21 DAYS · TESLA MODEL 3</p>
-          <h1>七千公里，二十一天，一辆特斯拉。</h1>
-          <p>
-            从杭州出发，在中国地图上用轮胎画一个环。华东、华北、黄土高原、四川盆地、江南丘陵，最后回到杭州。
-          </p>
+    <a class="skip-link" href="#main-content">跳到主要内容</a>
 
-          <div class="cockpit">
-            <div class="stat">
-              <span>站点</span>
-              <strong id="cityCount">28</strong>
-            </div>
-            <div class="stat">
-              <span>天数</span>
-              <strong>21</strong>
-            </div>
-            <div class="stat">
-              <span>里程</span>
-              <strong>7000+</strong>
-            </div>
-            <div class="stat">
-              <span>座驾</span>
-              <strong>Model 3</strong>
-            </div>
-            <button class="drive-button" id="driveToggle" type="button" aria-pressed="true">
-              <span class="drive-button__dot"></span>
-              自动巡航
-            </button>
-            <button class="drive-button share-button" id="shareGenerate" type="button">
-              生成分享图
-            </button>
-          </div>
-        </div>
-
-        <div class="map-stage">
-          <div class="map-frame">
-            <div id="routeMap" role="img" aria-label="以真实中国地图为底板的 21 天自驾路线"></div>
-          </div>
-        </div>
-
-        <aside class="info-panel" id="infoPanel" aria-live="polite">
-          <div class="panel-topline">
-            <span id="panelIndex">01</span>
-            <span id="panelTag">出发点</span>
-          </div>
-          <h2 id="panelCity">杭州</h2>
-          <div class="panel-meta" id="panelMeta"></div>
-          <p id="panelEgg">西湖边按下出发，红色车漆映着清晨的湖光。</p>
-          <div class="panel-grid">
-            <div>
-              <h3>看见</h3>
-              <ul id="panelSights"></ul>
-            </div>
-            <div>
-              <h3>吃过</h3>
-              <ul id="panelFoods"></ul>
-            </div>
-          </div>
-        </aside>
-      </section>
-
-      <section class="timeline" aria-label="路线站点时间线">
-        <div class="section-heading">
-          <p class="kicker">TAP THE STOPS</p>
-          <h2>每座城市都藏了一个路上的瞬间</h2>
-        </div>
-        <div class="timeline-strip" id="timelineStrip"></div>
-      </section>
-    </main>
-
-    <div class="share-modal" id="shareModal" aria-hidden="true" role="dialog" aria-label="自驾旅行分享图">
-      <div class="share-modal__backdrop" data-share-close></div>
-      <div class="share-modal__panel">
-        <div class="share-modal__top">
-          <div>
-            <p class="kicker">ROADTRIP POSTER</p>
-            <h2>你的七千公里分享图</h2>
-          </div>
-          <button class="share-modal__close" type="button" data-share-close aria-label="关闭分享图">×</button>
-        </div>
-        <div class="share-modal__preview">
-          <img id="sharePreview" alt="本次自驾路线分享图预览" />
-        </div>
-        <div class="share-modal__actions">
-          <button class="drive-button" id="shareDownload" type="button">保存到本地</button>
-          <button class="drive-button" id="shareRegenerate" type="button">重新生成</button>
-        </div>
-      </div>
+    <div class="ambient" aria-hidden="true">
+      <img src="./assets/profile/avatar.png" alt="" />
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+    <main class="page-shell" id="main-content">
+      <aside class="identity-column" aria-label="个人资料">
+        <section class="profile reveal" style="--delay: 40ms">
+          <img class="avatar" src="./assets/profile/avatar.png" alt="王子安的头像" width="1254" height="1254" />
+          <div class="profile-copy">
+            <h2>王子安</h2>
+            <a class="profile-link" href="https://jike.city/snapre" target="_blank" rel="noreferrer">
+              jike.city/snapre
+            </a>
+            <p class="status"><span aria-hidden="true"></span>创业中</p>
+          </div>
+        </section>
+
+        <div class="side-sections">
+          <section class="side-section reveal" style="--delay: 120ms" aria-labelledby="friends-title">
+            <header class="section-label" id="friends-title">
+              <span>友情链接</span>
+              <small>ALSO LINK TO</small>
+            </header>
+            <a
+              class="round-link friend-link"
+              href="https://jike.city/liaopei"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="远子的诗"
+              title="远子的诗"
+            >
+              <img src="./assets/profile/friend-liaopei.jpg" alt="远子的诗" width="120" height="120" />
+            </a>
+          </section>
+
+          <section class="side-section reveal" style="--delay: 200ms" aria-labelledby="contact-title">
+            <header class="section-label" id="contact-title">
+              <span>联系我</span>
+              <small>CONTACT ME</small>
+            </header>
+            <div class="icon-row">
+              <a
+                class="round-link"
+                href="mailto:hello@snapre.fun"
+                aria-label="发送邮件到 hello@snapre.fun"
+                title="hello@snapre.fun"
+              >
+                <img src="./assets/profile/contact-email.png" alt="" width="80" height="80" />
+              </a>
+              <button
+                class="round-link copy-button"
+                type="button"
+                data-copy="snapre"
+                data-message="微信号 snapre 已复制"
+                aria-label="复制微信号 snapre"
+                title="微信：snapre"
+              >
+                <img src="./assets/profile/contact-wechat.png" alt="" width="80" height="80" />
+              </button>
+            </div>
+          </section>
+        </div>
+      </aside>
+
+      <div class="content-column">
+        <header class="intro reveal" style="--delay: 80ms">
+          <p>Srome 创始人 &amp; CTO</p>
+          <p>AI Native Builder</p>
+          <p>deploy.bar 作者</p>
+        </header>
+
+        <section class="content-section reveal" style="--delay: 160ms" aria-labelledby="social-title">
+          <header class="section-label" id="social-title">
+            <span>社交媒体</span>
+            <small>SOCIAL MEDIA</small>
+          </header>
+          <nav class="social-grid" aria-label="社交媒体链接">
+            <a class="social-link" href="https://x.com/_snapre" target="_blank" rel="noreferrer" aria-label="X" title="X">
+              <img src="./assets/profile/social-x.png" alt="" width="120" height="120" />
+            </a>
+            <a
+              class="social-link"
+              href="https://www.instagram.com/snapre.wx?igsi=MThhdzN6NnJ4cWljNg%3D%3D&amp;utm_source=qr"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+              title="Instagram"
+            >
+              <img src="./assets/profile/social-instagram.png" alt="" width="126" height="126" />
+            </a>
+            <a
+              class="social-link"
+              href="https://github.com/snapre"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+              title="GitHub"
+            >
+              <img src="./assets/profile/social-github.png" alt="" width="120" height="120" />
+            </a>
+            <a
+              class="social-link"
+              href="https://m.okjike.com/users/c56f6ef9-abe1-439e-ba55-352e63e44169"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="即刻"
+              title="即刻"
+            >
+              <img src="./assets/profile/social-jike.png" alt="" width="120" height="120" />
+            </a>
+            <a
+              class="social-link"
+              href="https://xhslink.cn/o/5tsI2onVNAF"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="小红书"
+              title="小红书"
+            >
+              <img src="./assets/profile/social-xiaohongshu.png" alt="" width="120" height="120" />
+            </a>
+            <button
+              class="social-link copy-button"
+              type="button"
+              data-copy="易普 AI"
+              data-message="公众号「易普 AI」已复制"
+              aria-label="复制微信公众号 易普 AI"
+              title="微信公众号：易普 AI"
+            >
+              <img src="./assets/profile/social-wechat-official.png" alt="" width="120" height="120" />
+            </button>
+            <a
+              class="social-link"
+              href="https://weibo.com/snapre"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="微博"
+              title="微博"
+            >
+              <img src="./assets/profile/social-weibo.png" alt="" width="120" height="120" />
+            </a>
+          </nav>
+        </section>
+
+        <section class="content-section works-section reveal" style="--delay: 240ms" aria-labelledby="works-title">
+          <header class="section-label" id="works-title">
+            <span>作品</span>
+            <small>MY WORKS</small>
+          </header>
+          <div class="works-grid">
+            <a class="work-card" href="https://srome.app" target="_blank" rel="noreferrer">
+              <img src="./assets/profile/work-srome.png" alt="Srome" width="1024" height="1024" />
+              <span class="work-copy">
+                <strong>Srome</strong>
+                <span>Srome 是一个由 AI 居民参与的私密社交网络。</span>
+              </span>
+            </a>
+            <a class="work-card" href="https://deploy.bar" target="_blank" rel="noreferrer">
+              <img src="./assets/profile/work-deploybar.png" alt="DeployBar" width="1024" height="1024" />
+              <span class="work-copy">
+                <strong>DeployBar</strong>
+                <span>一款免费开源的 macOS 菜单栏部署监控工具。</span>
+              </span>
+            </a>
+            <a class="work-card" href="https://g.snapre.fun" target="_blank" rel="noreferrer">
+              <img src="./assets/profile/work-bobby-carrot.png" alt="bobby carrot" width="256" height="256" />
+              <span class="work-copy">
+                <strong>bobby carrot</strong>
+                <span>一款游戏</span>
+              </span>
+            </a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="./script.js"></script>
   </body>
 </html>
