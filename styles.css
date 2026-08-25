@@ -111,8 +111,8 @@ button {
 
 .hero-row {
   display: grid;
-  grid-template-columns: 160px minmax(0, 1fr);
-  gap: 40px;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 32px;
   align-items: center;
   margin-bottom: 52px;
   padding: 0 20px;
@@ -131,9 +131,9 @@ button {
 }
 
 .avatar {
-  width: 70px;
-  height: 70px;
-  margin-right: 15px;
+  width: 80px;
+  height: 80px;
+  margin-right: 0;
   margin-bottom: 20px;
   flex: 0 0 auto;
   overflow: hidden;
@@ -426,8 +426,8 @@ button {
   }
 
   .avatar {
-    width: 64px;
-    height: 64px;
+    width: 96px;
+    height: 96px;
     margin-bottom: 14px;
   }
 
